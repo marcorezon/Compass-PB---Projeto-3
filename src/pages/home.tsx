@@ -11,7 +11,8 @@ export const Home = () => {
         sx={{
             m: '0',
             p: '0',
-            bgcolor: 'background.default'
+            bgcolor: 'background.default',
+            fontFamily: 'Roboto'
         }}>
         <TopBar />
 
@@ -77,7 +78,6 @@ export const Home = () => {
                 component="h2"
                 sx={{
                     color: 'primary.main',
-                    fontFamily: 'roboto',
                     fontSize: "26px"
                 }}
             >WHY SHOULD YOU RIDE WITH US?
@@ -87,8 +87,7 @@ export const Home = () => {
                 variant="h1" 
                 component="h2"
                 sx={{
-                    color: '#fff',
-                    fontFamily: 'roboto',
+                    color: 'primary.light',
                     fontSize: "45px"
                 }}
             >Best in class rides

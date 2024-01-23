@@ -1,20 +1,18 @@
 import { createTheme } from "@mui/material";
-import { cyan, yellow } from '@mui/material/colors';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 export const standardTheme = createTheme({
     palette: {
         primary: {
-            main: yellow[700],
-            dark: yellow[800],
-            light: yellow[500],
+            main: '#FBA403',
+            dark: '#B3B3B3',
+            light: '#FFF',
             contrastText: '#ffffff'
         },
-        secondary: {
-            main: cyan[500],
-            dark: cyan[400],
-            light: cyan[300],
-            contrastText: '#ffffff'
-        },        
         background: {
             default: '#242424',
             paper: '#282828',

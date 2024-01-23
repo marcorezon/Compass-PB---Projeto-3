@@ -21,7 +21,14 @@ export default function TopBar() {
 
 
   return (
-    <AppBar position="static" sx={{ bgcolor: 'background.default' }}>
+    <AppBar 
+      position="static" 
+      sx={{ 
+        justifyContent: 'space-between',
+        bgcolor: 'background.default',
+        fontSize: '16px'
+      }}
+    >
       <Toolbar>
         <Typography>
           <img src={IconLogo} alt="app logo"/>
@@ -34,7 +41,8 @@ export default function TopBar() {
               sx={{
                 '&:hover': {
                   opacity: [0.9, 0.8, 0.7]
-                }
+                },
+                color: 'primary.light',
               }}
             />
           ))}
