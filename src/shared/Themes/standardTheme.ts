@@ -18,8 +18,8 @@ export const standardTheme = createTheme({
             paper: '#282828',
         },
         text: {
-            primary: '#173A5E',
-            secondary: '#46505A',
+            primary: '#FBA403',
+            secondary: '#FFF',
         },
     },
   });

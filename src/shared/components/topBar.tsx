@@ -18,8 +18,6 @@ export default function TopBar() {
     setAnchorEl(null);
   };
 
-
-
   return (
     <AppBar 
       position="static" 
@@ -79,7 +77,6 @@ export default function TopBar() {
           <IconButton sx={{height: '36px', width: '36px'}}>
             <Typography 
               sx={{height: '36px', width: '36px'}}
-              variant="img"
               component="img"
               borderRadius='36px'
               src={userAvatarTest}
