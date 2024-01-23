@@ -1,7 +1,15 @@
 import { Box, Container, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
 import FormImage from "./../../../public/Popup image.svg";
+import { FormattedTextField } from "./FormattedTextField";
+import { useState } from "react";
 
 export const RegisterForm = () => {
+
+    const [showForm, setShowForm] = useState(false);
+
+    function toggleShowForm () {
+        showForm ? setShowForm(false) : setShowForm(true); 
+    }
     return (
         <Box 
             sx={{
@@ -29,12 +37,13 @@ export const RegisterForm = () => {
                 </Container>
             </Container>
 
+            <FormattedTextField iWidth="1264px" placeHolder="Full Name"/>
+
             <TextField
-                sx={{}}
-                placeholder="Full Name"
+                label="Full Name"
             />
             <TextField
-                placeholder="Email Address"
+                label="Email Address"
             />
             <TextField
                 label="Your Destination"
@@ -63,23 +72,26 @@ export const RegisterForm = () => {
 
                 <Switch
                     inputProps={{ 'aria-label': 'controlled' }}
-                    label="Start"
-                    labelPlacement="start"
+                    onChange={toggleShowForm}
                 />
             </Container>
-
-            <FormControl sx={{display: 'inline-flex'}}>
-                <FormLabel id="demo-radio-buttons-group-label">Select your car type</FormLabel>
-                <RadioGroup
-                    aria-labelledby="demo-radio-buttons-group-label"
-                    name="radio-buttons-group"
-                >
-                    <FormControlLabel value="sedan" control={<Radio />} label="Sedan" />
-                    <FormControlLabel value="suv/van" control={<Radio />} label="Suv/Van" />
-                    <FormControlLabel value="semy luxury" control={<Radio />} label="Semy Luxury" />
-                    <FormControlLabel value="luxury car" control={<Radio />} label="Luxury Car" />
-                </RadioGroup>
-            </FormControl>
+            
+            {
+                showForm && (
+                    <FormControl sx={{display: 'inline-flex'}}>
+                        <FormLabel id="demo-radio-buttons-group-label">Select your car type</FormLabel>
+                        <RadioGroup
+                            aria-labelledby="demo-radio-buttons-group-label"
+                            name="radio-buttons-group"
+                        >
+                            <FormControlLabel value="sedan" control={<Radio />} label="Sedan" />
+                            <FormControlLabel value="suv/van" control={<Radio />} label="Suv/Van" />
+                            <FormControlLabel value="semy luxury" control={<Radio />} label="Semy Luxury" />
+                            <FormControlLabel value="luxury car" control={<Radio />} label="Luxury Car" />
+                        </RadioGroup>
+                    </FormControl>
+                )
+            }
             
         </Box>    
     );

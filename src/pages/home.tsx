@@ -1,4 +1,4 @@
-import { Container, TextField, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Header from "../shared/components/header";
 
 import { ClassRideCards } from "../shared/components/classRideCard";
@@ -45,8 +45,10 @@ export const Home = () => {
             </Typography>
             
             <ClassRideCards />
-
-            <RegisterForm />
+            
+            <section>
+                <RegisterForm />
+            </section>
 
         </Container>
 
