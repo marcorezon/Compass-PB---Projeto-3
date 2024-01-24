@@ -38,6 +38,7 @@ export default function Header() {
         <Tabs>
           {pages.map((page) => (
             <Tab
+              key={page}
               label={page}
               sx={{
                 '&:hover': {

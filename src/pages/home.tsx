@@ -1,6 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import Header from "../shared/components/header";
-
+import { Footer } from "../shared/components/footer";
 import { ClassRideCards } from "../shared/components/classRideCard";
 import { GetARide } from "../shared/components/getARide";
 import { RegisterForm } from "../shared/components/register";
@@ -9,7 +9,6 @@ import { RegisterForm } from "../shared/components/register";
 export const Home = () => {
     return (
     <Container
-        maxWidth={false}
         sx={{
             m: '0',
             p: '0',
@@ -45,11 +44,10 @@ export const Home = () => {
             </Typography>
             
             <ClassRideCards />
+        
+            <RegisterForm />
             
-            <section>
-                <RegisterForm />
-            </section>
-
+            <Footer />
         </Container>
 
     </Container>

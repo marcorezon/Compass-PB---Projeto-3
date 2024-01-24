@@ -14,13 +14,13 @@ export const GetARide = () => {
                 display: 'inline-flex',
                 gap: '42px'
             }}>
-            <div>
-                <img src={RideImage} alt="taxi image" />
-            </div>
+                
+            <img src={RideImage} alt="taxi image" />
 
             <Container 
                 sx={{
-                    width: '610px',
+                    width: '100%',
+                    maxWidth: '610px',
                     display: 'flex', 
                     flexDirection: 'column',
                     m: '0px',
