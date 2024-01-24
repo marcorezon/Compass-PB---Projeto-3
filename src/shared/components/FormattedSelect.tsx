@@ -1,6 +1,16 @@
 import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-
+import { locationData } from "../services/location/locationApi";
+import { useEffect } from "react";
 export const FormattedSelect = () => {
+
+    var local: {};
+
+    useEffect(() => {
+        locationData.get("/location").then((response) => {
+          local = response.data;
+        });
+      }, []);
+
     return (
         <Container sx={{gap: 'inherit'}}>
             <FormControl fullWidth>
