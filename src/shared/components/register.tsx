@@ -125,8 +125,16 @@ export const RegisterForm = () => {
                                 <FormControlLabel
                                     key={category.radioValue}
                                     value={category.radioValue}
-                                    control={<Radio />}
-                                    label={<img src={category.imageLink} alt={category.altContent} />}
+                                    control={
+                                        <Radio 
+                                            icon={<img src={category.imageLink} alt="" />}
+                                            checkedIcon={<img src={category.imageLink} alt=""/>}
+                                            sx={{
+                                                '&.Mui-checked': {
+                                                  opacity: "0.3"
+                                                },
+                                              }}
+                                        />}
                                 />
                             );
                         })}
