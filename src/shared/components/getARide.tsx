@@ -83,8 +83,8 @@ export const GetARide = () => {
                     />
 
                     <FormattedButton 
-                        pWidth="544px"
                         text="FIND A DRIVER"
+                        max="544px"
                     />
                     
                 </Container>

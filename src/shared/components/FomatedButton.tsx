@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
 
-export const FormattedButton = ({text="", pWidth=""}) => {
+export const FormattedButton = ({text="", max=""}) => {
     return (
-        <Button
+        <Button 
             sx={{
                 height: '56px',
-                maxWidth: {pWidth},
+                maxWidth: {max},
                 width: '100%',
                 color: 'primary.light',
                 bgcolor: 'primary.main'

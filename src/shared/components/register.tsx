@@ -3,7 +3,7 @@ import FormImage from "./../../../public/Popup image.svg";
 import { FormattedTextField } from "./FormattedTextField";
 import { useState } from "react";
 import { FormattedButton } from "./FomatedButton";
-
+import { FormattedSelect } from "./FormattedSelect";
 const radioData = [
     {
         radioValue: 'sedan',
@@ -69,14 +69,10 @@ export const RegisterForm = () => {
             <TextField
                 label="Email Address"
             />
+            <FormattedSelect />
+     
             <TextField
-                label="Your Destination"
-            />
-            <TextField
-                label="Your Destination"
-            />
-            <TextField
-                label="Your Destination"
+                label="Referal code"
             />
 
             <Container sx={{
@@ -130,9 +126,13 @@ export const RegisterForm = () => {
                                             icon={<img src={category.imageLink} alt="" />}
                                             checkedIcon={<img src={category.imageLink} alt=""/>}
                                             sx={{
+                                                borderRadius: '10px',
                                                 '&.Mui-checked': {
                                                   opacity: "0.3"
                                                 },
+                                                '&:hover': {
+                                                    opacity: "0.5"
+                                                }
                                               }}
                                         />}
                                 />
@@ -141,7 +141,9 @@ export const RegisterForm = () => {
                     </RadioGroup>
                 </FormControl>)
             }
-            <FormattedButton text="Submit" pWidth="200px"/>
+            <Container sx={{maxWidth: '200px'}}>
+                <FormattedButton text="Submit" max="200px" />
+            </Container>
         </Box>
     );
 }
