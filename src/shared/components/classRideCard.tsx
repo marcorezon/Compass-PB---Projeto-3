@@ -39,10 +39,8 @@ export const ClassRideCards = () => {
             {classRides.map((object) => (
                 <Card 
                     sx={{ 
-                        maxWidth: '307px',
-                        maxHeight: '394px',
-                        width: '100%',
-                        height: '100%',
+                        width: '307px',
+                        height: '394px',
                         textAlign: 'start' 
                     }}>
                     <CardMedia

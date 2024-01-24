@@ -18,9 +18,7 @@ export const Home = () => {
         }}>
         <Header />
 
-        <section>
-            <GetARide />
-        </section>
+        <GetARide />
 
         <Container
             maxWidth={false} 

@@ -6,6 +6,7 @@ export const FormattedButton = ({text="", pWidth=""}) => {
             sx={{
                 height: '56px',
                 maxWidth: {pWidth},
+                width: '100%',
                 color: 'primary.light',
                 bgcolor: 'primary.main'
             }}

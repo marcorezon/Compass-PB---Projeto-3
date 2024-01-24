@@ -11,7 +11,7 @@ export const GetARide = () => {
                 width: '100%',
                 overflow: 'hidden',
                 my: '74px', 
-                mx: '89px',
+                px: '89px',
                 display: 'inline-flex',
                 gap: '42px'
             }}>
@@ -31,6 +31,7 @@ export const GetARide = () => {
                     display: 'flex', 
                     flexDirection: 'column',
                     m: '0px',
+                    p: '0px',
                     gap: '15px',
                     justifyContent: 'center'
                     }}
@@ -49,7 +50,7 @@ export const GetARide = () => {
                     sx={{fontSize: '50px', color: 'primary.light'}}
                     variant="h1" 
                     component='h2'
-                >Book with myRIDE now!
+                >   Book with <Typography component="span" sx={{fontSize: '50px', color: 'primary.main'}}><i>my</i>RIDE</Typography> now!
                 </Typography>
 
                 <Container

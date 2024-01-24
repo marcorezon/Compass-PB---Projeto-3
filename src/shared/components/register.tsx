@@ -2,6 +2,7 @@ import { Box, Container, FormControl, FormControlLabel, FormLabel, Radio, RadioG
 import FormImage from "./../../../public/Popup image.svg";
 import { FormattedTextField } from "./FormattedTextField";
 import { useState } from "react";
+import { FormattedButton } from "./FomatedButton";
 
 const radioData = [
     {
@@ -46,7 +47,7 @@ export const RegisterForm = () => {
             }}>
             <Container sx={{ textAlign: 'start', display: 'inline-flex' }}>
                 <img src={FormImage} />
-                <Container sx={{ flexDirection: 'column' }}>
+                <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <Typography
                         component='p'
                         sx={{ color: 'primary.main' }}
@@ -132,7 +133,7 @@ export const RegisterForm = () => {
                     </RadioGroup>
                 </FormControl>)
             }
-
+            <FormattedButton text="Submit" pWidth="200px"/>
         </Box>
     );
 }
