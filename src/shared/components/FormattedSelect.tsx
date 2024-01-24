@@ -3,11 +3,11 @@ import { locationData } from "../services/location/locationApi";
 import { useEffect } from "react";
 export const FormattedSelect = () => {
 
-    var local: {};
+    var local = [""];
 
     useEffect(() => {
-        locationData.get("/location").then((response) => {
-          local = response.data;
+        locationData.get("").then((response) => {
+          local = Object.keys(response.data.keys);
         });
       }, []);
 
@@ -23,6 +23,12 @@ export const FormattedSelect = () => {
                     label="Contry"
                     onChange={undefined}
                 >
+                    {local.map( (country) => {
+                        return (
+                            <MenuItem key={country} value={country}>{country}</MenuItem>
+                        );
+                    })}
+
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
