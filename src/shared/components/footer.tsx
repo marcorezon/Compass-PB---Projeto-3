@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Button, Container, Link, Typography } from "@mui/material";
 import facebookLogo from "./../../../public/footer/Facebook.svg";
 import instagramLogo from "./../../../public/footer/Instagram.svg";
 import twitterLogo from "./../../../public/footer/Twitter.svg";
@@ -17,55 +17,68 @@ const footerData = [
     },
     {
         identifier: "More",
-        links: ['About us', 'News', 'Careers', 'How we work'],
+        links: ['Become a partner', 'Partner Support', 'Mobile app links'],
         relativeAnchor: []
     }
 ]
 
-const footerTextTheme = {color: "primary.light"};
-const footerLinkTheme = {color: "primary.light", textTransform :"none", fontSize: '16px'};
-
+const footerTextTheme = {mb: '8px', color: "primary.light", fontSize: "20px"};
+const footerLinkTheme = {p: '0', color: "primary.light", textTransform :"none", fontSize: '16px'};
+const footerLocation = {color: 'text.secondary', fontSize: '16px', fontWeight: '400'};
 const footerTheme = {
     display: 'inline-flex', 
     py: '40px', 
-    px: '80px',
-    gap: '80px'
+    mx: '80px',
+    gap: '80px',
+    width: '100%'
 }
 
 export const Footer = () => {
     return (
         <Container sx={{...footerTheme}}>
-            <Container>
-                <img src={whiteLogo} />
+            <Container 
+                sx={{
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: "16px"
+                }}>
+                
+                <div>
+                    <img src={whiteLogo} />
+                </div>
 
-                <Typography sx={footerTextTheme}>
+                <Typography sx={{...footerLocation}}>
                     MyRide Inc., 2nd Floor, New York, NY 10016
                 </Typography>
 
-                <Container>
+                <Container sx={{display: 'flex', p: '0px', gap: "16px"}}>
                     <img src={facebookLogo} />
                     <img src={instagramLogo} />
                     <img src={twitterLogo}/>
                 </Container>
 
             </Container>
-            {footerData.map( (linkSection) => {
-                return(
-                    <Container 
-                        sx={{
-                            display: 'flex', 
-                            flexDirection:'column',
-                            alignItems: 'start'
-                        }}>
-                        <Typography sx={{...footerTextTheme}}>{linkSection.identifier}</Typography>
-                        {linkSection.links.map( (link) => {
-                            return (
-                                <Button sx={{...footerLinkTheme}}>{link}</Button>
-                            );
-                        })}
-                    </Container>
-                );
-            })}
+            <Container sx={{display: 'inline-flex', gap: '20px'}}>
+                {footerData.map( (linkSection) => {
+                    return(
+                        <Container 
+                            sx={{
+                                display: 'flex', 
+                                flexDirection:'column',
+                                alignItems: 'flex-start',
+                                gap: '12px'
+                            }}>
+                            <Typography sx={{...footerTextTheme}}>{linkSection.identifier}</Typography>
+                            
+                            {linkSection.links.map( (link) => {
+                                return (
+                                    <Link href="#" underline="none" sx={{...footerLinkTheme}}>{link}</Link>
+                                );
+                            })}
+                        </Container>
+                    );
+                })}
+            </Container>
         </Container>
     );
 }

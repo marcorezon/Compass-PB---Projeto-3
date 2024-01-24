@@ -28,20 +28,29 @@ export const ClassRideCards = () => {
     return (
         <Container
             sx={{
+                mx: '0',
                 mt: '60px',
                 mb: '101px',
+                p: '0',
                 display: 'flex',
                 gap: '24px'
             }}
         >
             {classRides.map((object) => (
-                <Card sx={{ textAlign: 'start' }}>
+                <Card 
+                    sx={{ 
+                        maxWidth: '307px',
+                        maxHeight: '394px',
+                        width: '100%',
+                        height: '100%',
+                        textAlign: 'start' 
+                    }}>
                     <CardMedia
                         sx={{ height: 190 }}
                         component="img"
                         image={object.image}
                     />
-                    <CardContent>
+                    <CardContent sx={{p: '15px'}}>
                         <Typography sx={{ color: 'primary.light' }}>
                             {object.label}
                         </Typography>
@@ -49,9 +58,9 @@ export const ClassRideCards = () => {
                             {object.content}
                         </Typography>
                     </CardContent>
-                    <Container sx={{ display: 'flex', alignItems: 'bottom', justifyContent: 'flex-end' }}>
-                        <CardActions>
-                            <Button size="small">LEARN MORE</Button>
+                    <Container sx={{ display: 'flex', justifyContent: 'flex-end', pb: '14px', py:'14px' }}>
+                        <CardActions sx={{p: '0'}}>
+                            <Button sx={{p: '0'}} size="small">LEARN MORE</Button>
                         </CardActions>
                     </Container>
                 </Card>

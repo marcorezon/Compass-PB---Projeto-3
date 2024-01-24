@@ -7,19 +7,26 @@ import RideImage from "./../../../public/homeImages/ride.png";
 export const GetARide = () => {
     return (
         <Container
-            maxWidth={false}
             sx={{
+                width: '100%',
+                overflow: 'hidden',
                 my: '74px', 
                 mx: '89px',
                 display: 'inline-flex',
                 gap: '42px'
             }}>
-                
-            <img src={RideImage} alt="taxi image" />
+            
+            <Container>
+                <Typography
+                    sx={{ maxHeight: '593px', maxWidth: '610px', width: '100%', height: '100%' }}
+                    component="img"
+                    src={RideImage}
+                    alt="taxi image"
+                />   
+            </Container>
 
             <Container 
                 sx={{
-                    width: '100%',
                     maxWidth: '610px',
                     display: 'flex', 
                     flexDirection: 'column',
@@ -47,7 +54,7 @@ export const GetARide = () => {
 
                 <Container
                     sx={{
-                        width: '610px',
+                        maxWidth: '610px',
                         display: 'flex', 
                         flexDirection: 'column',
                         gap: '16px',

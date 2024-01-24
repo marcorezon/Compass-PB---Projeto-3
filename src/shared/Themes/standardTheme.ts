@@ -19,7 +19,7 @@ export const standardTheme = createTheme({
         },
         text: {
             primary: '#FBA403',
-            secondary: '#FFF',
+            secondary: '#B3B3B3',
         },
     },
   });

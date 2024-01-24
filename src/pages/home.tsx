@@ -9,6 +9,7 @@ import { RegisterForm } from "../shared/components/register";
 export const Home = () => {
     return (
     <Container
+        maxWidth={false}
         sx={{
             m: '0',
             p: '0',
@@ -21,7 +22,17 @@ export const Home = () => {
             <GetARide />
         </section>
 
-        <Container sx={{my: '60px', textAlign: 'center'}}>
+        <Container
+            maxWidth={false} 
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%', 
+                my: '60px', 
+                mx: '0', 
+                textAlign: 'center'
+            }}>
             
             <Typography 
                 variant="h1" 
@@ -46,10 +57,8 @@ export const Home = () => {
             <ClassRideCards />
         
             <RegisterForm />
-            
-            <Footer />
         </Container>
-
+        <Footer />
     </Container>
     );
 }

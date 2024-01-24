@@ -37,7 +37,7 @@ export const RegisterForm = () => {
         <Box
             sx={{
                 flexDirection: 'column',
-                width: '1252px',
+                maxWidth: '1252px',
                 display: "flex",
                 p: '25px',
                 gap: '24px',
