@@ -44,7 +44,7 @@ export const Footer = () => {
                 }}>
                 
                 <div>
-                    <img src={whiteLogo} />
+                    <img src={whiteLogo} alt="blank logo"/>
                 </div>
 
                 <Typography sx={{...footerLocation}}>
@@ -52,9 +52,9 @@ export const Footer = () => {
                 </Typography>
 
                 <Container sx={{display: 'flex', p: '0px', gap: "16px"}}>
-                    <img src={facebookLogo} />
-                    <img src={instagramLogo} />
-                    <img src={twitterLogo}/>
+                    <img src={facebookLogo} alt="facebook logo"/>
+                    <img src={instagramLogo} alt="instagram logo"/>
+                    <img src={twitterLogo} alt="twitter logo"/>
                 </Container>
 
             </Container>
