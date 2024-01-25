@@ -1,4 +1,5 @@
-import { Box, Container, Link, Typography, createTheme } from "@mui/material";
+import { Box, Container, Link, Typography} from "@mui/material";
+
 import facebookLogo from "./../../../public/footer/Facebook.svg";
 import instagramLogo from "./../../../public/footer/Instagram.svg";
 import twitterLogo from "./../../../public/footer/Twitter.svg";
@@ -49,7 +50,7 @@ export const Footer = () => {
                             <Typography sx={{ mb: '8px', color: "primary.main", fontSize: "20px" }}>
                                 {linkSection.identifier}
                             </Typography>
-                            { linkSection.links.map((link) => {return (<Link key={link} href="#" underline="none" sx={{ ...footerLinkTheme }}> {link} </Link>);} ) }
+                            { linkSection.links.map((link) => {return (<Link key={link} href="#" underline="none" sx={{ ...footerLinkTheme }}>{link}</Link>);} ) }
                         </Container>
                     );})}
             </Container>

@@ -1,11 +1,9 @@
-import { Container, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
-import FormImage from "./../../../public/Popup image.svg";
-import { FormattedTextField } from "./FormattedTextField";
-import { useState } from "react";
-import { FormattedButton } from "./FomatedButton";
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
+import { InlineContainer, ColumnContainer, Img, CustomButton} from "./customComponents";
 import { FormattedSelect } from "./FormattedSelect";
+import { useState } from "react";
 
-import { InlineContainer, ColumnContainer, Img } from "./customComponents";
+import FormImage from "./../../../public/Popup image.svg";
 
 const radioData = [
     {
@@ -39,6 +37,7 @@ export const RegisterForm = () => {
     }
     return (
         <ColumnContainer
+            alignSelf='center'
             maxWidth = '1252px'
             p = '25px'
             gap = '24px'
@@ -46,7 +45,7 @@ export const RegisterForm = () => {
             bgcolor = 'background.paper'
             >
 
-            <InlineContainer textAlign='start'>
+            <InlineContainer textAlign='start' alignItems='center' gap="10px">
                 <Img src={FormImage} alt="car icon" sx={{maxWidth: '193px', maxHeight: '132px'}}/>
                 <ColumnContainer justifyContent = 'center'>
                     <Typography variant = "h5" component='h5'>
@@ -57,8 +56,6 @@ export const RegisterForm = () => {
                     </Typography>
                 </ColumnContainer>
             </InlineContainer>
-
-            <FormattedTextField iWidth="1264px" placeHolder="Full Name" />
 
             <TextField
                 name="name"
@@ -107,16 +104,15 @@ export const RegisterForm = () => {
                                                     opacity: "0.5"
                                                 }
                                             }}
-                                        />}
+                                        />
+                                    }
                                 />
-                            );
-                        })}
+                            );})
+                        }
                     </RadioGroup>
                 </FormControl>)
             }
-            <Container sx={{ maxWidth: '200px' }}>
-                <FormattedButton text="Submit" max="200px" />
-            </Container>
+            <CustomButton sx={{maxWidth: '200px' }}>Submit</CustomButton>
         </ColumnContainer>
     );
 }

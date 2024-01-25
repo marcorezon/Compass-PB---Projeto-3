@@ -1,21 +1,16 @@
 import { Container, Typography } from "@mui/material";
-import Header from "../shared/components/header";
 import { Footer } from "../shared/components/footer";
 import { ClassRideCards } from "../shared/components/classRideCard";
 import { GetARide } from "../shared/components/getARide";
 import { RegisterForm } from "../shared/components/register";
+import { ColumnContainer } from "../shared/components/customComponents";
 
+import Header from "../shared/components/header";
 
 export const Home = () => {
     return (
-    <Container
-        maxWidth={false}
-        sx={{
-            m: '0',
-            p: '0',
-            bgcolor: 'background.default',
-            fontFamily: 'Roboto'
-        }}>
+    <ColumnContainer px='2%' bgcolor='background.default' fontFamily = 'Roboto' overflow='hidden'>
+
         <Header />
 
         <GetARide />
@@ -32,19 +27,19 @@ export const Home = () => {
                 textAlign: 'center'
             }}>
             
-            <Typography variant="h3" component="h3">
+            <Typography variant='h3' component='h3'>
                 WHY SHOULD YOU RIDE WITH US?
             </Typography>
 
-            <Typography variant="h4" component="h4">
+            <Typography variant='h4' component='h4'>
                 Best in class rides
             </Typography>
             
             <ClassRideCards />
-        
+
             <RegisterForm />
         </Container>
         <Footer />
-    </Container>
+    </ColumnContainer>
     );
 }

@@ -1,7 +1,9 @@
-import { Box, FormControl, InputLabel, MenuItem, NativeSelect, Select, SelectChangeEvent } from "@mui/material";
-import countriesData from "./../../../utils/countries-and-cities";
-import { useState } from "react";
+import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { ColumnContainer } from "./customComponents";
+import { useState } from "react";
+
+import countriesData from "./../../../utils/countries-and-cities";
+
 export const FormattedSelect = () => {
 
     const countries = Object.keys(countriesData);
@@ -12,6 +14,7 @@ export const FormattedSelect = () => {
     function handleSelectCountry (event: SelectChangeEvent) {
         setCountry(event.target.value as string);
     }
+
     function handleSelectCity (event: SelectChangeEvent) {
         setCity(event.target.value as string);
     }
@@ -31,8 +34,8 @@ export const FormattedSelect = () => {
                     {countries.map( (country) => {
                         return (
                             <MenuItem key={country} value={country}>{country}</MenuItem>
-                        );
-                    })}
+                        );})
+                    }
 
                 </Select>
             </FormControl>
@@ -52,7 +55,6 @@ export const FormattedSelect = () => {
                             <MenuItem color="primary.main" key={city} value={city}>{city}</MenuItem>
                         );}))
                     }
-  
                 </Select>
             </FormControl>
         </ColumnContainer>

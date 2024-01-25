@@ -13,6 +13,9 @@ export const standardTheme = createTheme({
             light: '#FFF',
             contrastText: '#ffffff'
         },
+        secondary: {
+            main: '#FBA403',
+        },
         background: {
             default: '#242424',
             paper: '#282828',

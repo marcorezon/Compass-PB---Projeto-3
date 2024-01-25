@@ -1,14 +1,16 @@
-import { AppBar, Container, IconButton, Menu, MenuItem, Tab, Tabs, Toolbar, Typography, styled } from "@mui/material";
+import { AppBar, IconButton, Menu, MenuItem, Tab, Tabs, Box, Toolbar, Typography, styled } from "@mui/material";
+import { InlineContainer, Img } from "./customComponents";
 import { useState, MouseEvent } from "react";
+
 import IconLogo from "./../../../public/Logo.svg";
 import NotificationIcon from "./../../../public/bell-icon.svg";
 import userAvatarTest from "./../../../public/userAvatar.png";
 
-const pages = ['Home', 'Getting a Taxi', 'Mobile App', 'Contact Us']
 
 export default function Header() {
-
+  
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const pages = ['Home', 'Getting a Taxi', 'Mobile App', 'Contact Us']
 
   const handleMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -18,16 +20,12 @@ export default function Header() {
     setAnchorEl(null);
   };
 
-  const ProjectAppBar = styled((AppBar) => (({
-
-  })))
-
   return (
-    <AppBar position="static" sx={{ width: '100%', p: '20px', justifyContent: 'space-between', bgcolor: 'background.default', fontSize: '16px', boxShadow: 'none' }}>
+    <AppBar position='static' sx={{ width: '100%', p: '20px', justifyContent: 'space-between', bgcolor: 'background.default', fontSize: '16px', boxShadow: 'none' }}>
 
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Typography>
-          <img src={IconLogo} alt="app logo" />
+          <Img src={IconLogo} alt='app logo' />
         </Typography>
 
         <Tabs value={0}>
@@ -36,35 +34,33 @@ export default function Header() {
           ))}
         </Tabs>
 
-        <Container sx={{ display: 'inline-flex', width: '100px', m: '0' }}>
-          <div>
+        <InlineContainer gap='40px' maxWidth='100px' alignItems='center'>
+          <Box>
             <IconButton>
-              <Container>
-                <img src={NotificationIcon} alt="notification bell"></img>
-              </Container>
-            </IconButton>
+                  <Img src={NotificationIcon} alt='notification bell' sx={{width: '24px', height: '27px'}} />
+              </IconButton>
 
-            <Menu
-              keepMounted
-              id="notification-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{ vertical: 'top', horizontal: 'right',}}
-              transformOrigin={{vertical: 'top', horizontal: 'right',}}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-            </Menu>
-          </div>
+              <Menu
+                keepMounted
+                id='notification-appbar'
+                anchorEl={anchorEl}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right',}}
+                transformOrigin={{vertical: 'top', horizontal: 'right',}}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+              </Menu>
+          </Box>
 
-          <div>
+          <Box>
             <IconButton sx={{ height: '36px', width: '36px' }}>
-              <Typography sx={{ height: '36px', width: '36px' }} component="img" borderRadius='36px' src={userAvatarTest} alt="user avatar"/>
+              <Img src={userAvatarTest} alt='user avatar' sx={{ height: '36px', width: '36px', borderRadius: '36px' }}/>
             </IconButton>
 
             <Menu
-              id="user-appbar"
+              id='user-appbar'
               anchorEl={anchorEl}
               anchorOrigin={{
                 vertical: 'top',
@@ -81,8 +77,8 @@ export default function Header() {
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
             </Menu>
-          </div>
-        </Container>
+          </Box>
+        </InlineContainer>
       </Toolbar>
     </AppBar>
   );
