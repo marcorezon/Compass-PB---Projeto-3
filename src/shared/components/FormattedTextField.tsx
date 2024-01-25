@@ -5,6 +5,7 @@ export const FormattedTextField = ({ iWidth, placeHolder }) => {
         <TextField
             variant="outlined"
             sx={{
+                color: "primary.light",
                 maxWidth: {iWidth},
                 height: '57px',
             }}

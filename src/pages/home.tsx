@@ -32,24 +32,12 @@ export const Home = () => {
                 textAlign: 'center'
             }}>
             
-            <Typography 
-                variant="h1" 
-                component="h2"
-                sx={{
-                    color: 'text.primary',
-                    fontSize: "26px"
-                }}
-            >WHY SHOULD YOU RIDE WITH US?
+            <Typography variant="h3" component="h3">
+                WHY SHOULD YOU RIDE WITH US?
             </Typography>
 
-            <Typography
-                variant="h1" 
-                component="h2"
-                sx={{
-                    color: 'primary.main',
-                    fontSize: "45px"
-                }}
-            >Best in class rides
+            <Typography variant="h4" component="h4">
+                Best in class rides
             </Typography>
             
             <ClassRideCards />

@@ -1,4 +1,4 @@
-import { AppBar, Container, IconButton, Menu, MenuItem, Tab, Tabs, Toolbar, Typography } from "@mui/material";
+import { AppBar, Container, IconButton, Menu, MenuItem, Tab, Tabs, Toolbar, Typography, styled } from "@mui/material";
 import { useState, MouseEvent } from "react";
 import IconLogo from "./../../../public/Logo.svg";
 import NotificationIcon from "./../../../public/bell-icon.svg";
@@ -18,40 +18,25 @@ export default function Header() {
     setAnchorEl(null);
   };
 
+  const ProjectAppBar = styled((AppBar) => (({
+
+  })))
+
   return (
-    <AppBar
-      position="static"
-      sx={{
-        width: '100%',
-        p: '20px',
-        justifyContent: 'space-between',
-        bgcolor: 'background.default',
-        fontSize: '16px',
-        boxShadow: 'none'
-      }}
-    >
-      <Toolbar sx={{justifyContent: 'space-between'}}>
+    <AppBar position="static" sx={{ width: '100%', p: '20px', justifyContent: 'space-between', bgcolor: 'background.default', fontSize: '16px', boxShadow: 'none' }}>
+
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Typography>
           <img src={IconLogo} alt="app logo" />
         </Typography>
 
-        <Tabs>
+        <Tabs value={0}>
           {pages.map((page) => (
-            <Tab
-              key={page}
-              label={page}
-              sx={{
-                '&:hover': {
-                  opacity: [0.9, 0.8, 0.7]
-                },
-                textTransform :'none',
-                color: 'primary.main',
-              }}
-            />
+            <Tab key={page} label={page} sx={{'&:hover': {opacity: [0.9, 0.8, 0.7]}, textTransform: 'none',color: 'primary.main',}}/>
           ))}
         </Tabs>
-        
-        <Container sx={{display: 'inline-flex', width: '100px', m:'0'}}>
+
+        <Container sx={{ display: 'inline-flex', width: '100px', m: '0' }}>
           <div>
             <IconButton>
               <Container>
@@ -60,17 +45,11 @@ export default function Header() {
             </IconButton>
 
             <Menu
+              keepMounted
               id="notification-appbar"
               anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
+              anchorOrigin={{ vertical: 'top', horizontal: 'right',}}
+              transformOrigin={{vertical: 'top', horizontal: 'right',}}
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
@@ -81,12 +60,7 @@ export default function Header() {
 
           <div>
             <IconButton sx={{ height: '36px', width: '36px' }}>
-              <Typography
-                sx={{ height: '36px', width: '36px' }}
-                component="img"
-                borderRadius='36px'
-                src={userAvatarTest}
-              />
+              <Typography sx={{ height: '36px', width: '36px' }} component="img" borderRadius='36px' src={userAvatarTest} alt="user avatar"/>
             </IconButton>
 
             <Menu

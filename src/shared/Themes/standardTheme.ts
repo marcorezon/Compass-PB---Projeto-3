@@ -22,4 +22,32 @@ export const standardTheme = createTheme({
             secondary: '#B3B3B3',
         },
     },
+    typography: {
+        fontSize: 16,
+        h1: {
+            fontSize: 26,
+            fontWeight: 400,
+            color: "#FFFFFF"
+        },
+        h2: {
+            fontSize: '50px',
+            fontWeight: 700, 
+            color: '#FFFFFF'
+        },
+        h3: {
+            fontSize: 26,
+            fontWeight: 400,
+            color: "#FBA403"
+        },
+        h4: {
+            fontSize: "45px",
+            fontWeight: 700,
+            color: '#FFFFFF'
+        },
+        h5:  {
+            fontSize: 27,
+            fontWeight: 700,
+            color: "#FBA403"
+        }
+    }
   });

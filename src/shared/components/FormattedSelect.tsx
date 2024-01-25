@@ -1,7 +1,7 @@
 import { Box, FormControl, InputLabel, MenuItem, NativeSelect, Select, SelectChangeEvent } from "@mui/material";
 import countriesData from "./../../../utils/countries-and-cities";
 import { useState } from "react";
-
+import { ColumnContainer } from "./customComponents";
 export const FormattedSelect = () => {
 
     const countries = Object.keys(countriesData);
@@ -17,12 +17,11 @@ export const FormattedSelect = () => {
     }
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', m: '0', p:'0', gap: '20px'}}>
-
+        <ColumnContainer gap='20px' sx={{alignItems: 'center'}}>
             <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Country</InputLabel>
+                <InputLabel id="contry-select-label">Country</InputLabel>
                 <Select
-                    
+                    name="country"
                     labelId="Country"
                     id="selectCountry"
                     value={country}
@@ -30,7 +29,6 @@ export const FormattedSelect = () => {
                     onChange={handleSelectCountry}
                 >
                     {countries.map( (country) => {
-                        console.log(country)
                         return (
                             <MenuItem key={country} value={country}>{country}</MenuItem>
                         );
@@ -40,8 +38,9 @@ export const FormattedSelect = () => {
             </FormControl>
 
             <FormControl disabled={country === ''} fullWidth>
-                <InputLabel id="demo-simple-select-label">City</InputLabel>
+                <InputLabel id="city-select-label">City</InputLabel>
                 <Select
+                    name="city"
                     labelId="City"
                     id="selectCity"
                     value={city}
@@ -56,6 +55,7 @@ export const FormattedSelect = () => {
   
                 </Select>
             </FormControl>
-        </Box>
+        </ColumnContainer>
+
     );
 }

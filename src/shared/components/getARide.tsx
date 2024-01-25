@@ -3,93 +3,35 @@ import { FormattedButton } from "./FomatedButton"
 
 import Magnifier from "./../../../public/magnifier.svg";
 import RideImage from "./../../../public/homeImages/ride.png";
+import { InlineContainer, ColumnContainer, Img, Span } from "./customComponents";
 
 export const GetARide = () => {
     return (
-        <Container
-            sx={{
-                width: '100%',
-                overflow: 'hidden',
-                my: '74px', 
-                px: '89px',
-                display: 'inline-flex',
-                gap: '42px'
-            }}>
-            
-            <Container>
-                <Typography
-                    sx={{ maxHeight: '593px', maxWidth: '610px', width: '100%', height: '100%' }}
-                    component="img"
-                    src={RideImage}
-                    alt="taxi image"
-                />   
-            </Container>
+        <InlineContainer alignContent='center' my = '74px' px = '89px' gap = '42px'>
+            <Img src={RideImage} alt="taxi image" sx={{maxHeight:'593px', maxWidth: '610px'}}/>
 
-            <Container 
-                sx={{
-                    maxWidth: '610px',
-                    display: 'flex', 
-                    flexDirection: 'column',
-                    m: '0px',
-                    p: '0px',
-                    gap: '15px',
-                    justifyContent: 'center'
-                    }}
-            >
-                <Typography
-                    sx={{
-                        fontSize: '26px',
-                        color: 'primary.main'
-                    }} 
-                    variant="h1" 
-                    component='h2'
-                >Need a ride?
-                </Typography>
-
-                <Typography 
-                    sx={{fontSize: '50px', color: 'primary.main'}}
-                    variant="h1" 
-                    component='h2'
-                >   Book with <Typography component="span" sx={{fontSize: '50px', color: 'text.primary'}}><i>my</i>RIDE</Typography> now!
-                </Typography>
-
-                <Container
-                    sx={{
-                        maxWidth: '610px',
-                        display: 'flex', 
-                        flexDirection: 'column',
-                        gap: '16px',
-                        bgcolor: 'background.paper',
-                        m: '0',
-                        p: '33px',
-                        borderRadius: '4px'
-                    }}
-                >
-                    <Typography
-                        sx={{
-                            fontSize: '26px',
-                            color: 'primary.main'
-                        }}
-                    >Find a ride now
+            <ColumnContainer gap = '15px'>
+                <Typography variant='h1' component='h1'>
+                        Need a ride?
                     </Typography>
-                    <TextField 
-                        required
-                        label="Your Pickup"
-                        placeholder=""
-                    />
 
-                    <TextField
-                        label="Your Destination"
-                    />
+                    <Typography variant='h2' component="h2">
+                        Book with <Span sx={{color: 'text.primary'}}><i>my</i>RIDE</Span> now!
+                    </Typography>
 
-                    <FormattedButton 
-                        text="FIND A DRIVER"
-                        max="544px"
-                    />
-                    
-                </Container>
-            </Container>
-        </Container>
+                    <ColumnContainer justifySelf = 'center' maxWidth = '610px' gap = '15px' padding="33px" bgcolor= 'background.paper' borderRadius = '4px'>
+                        <Typography sx={{fontSize: '26px', color: 'primary.main'}}>
+                            Find a ride now
+                        </Typography>
+
+                        <TextField name="pickup" required label="Your Pickup" placeholder=""/>
+
+                        <TextField name="destination" label="Your Destination"/>
+
+                        <FormattedButton text="FIND A DRIVER" max="544px"/>
+                    </ColumnContainer>
+            </ColumnContainer>
+        </InlineContainer>
     );
     
 }

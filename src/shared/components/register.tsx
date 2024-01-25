@@ -1,9 +1,12 @@
-import { Box, Container, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
+import { Container, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
 import FormImage from "./../../../public/Popup image.svg";
 import { FormattedTextField } from "./FormattedTextField";
 import { useState } from "react";
 import { FormattedButton } from "./FomatedButton";
 import { FormattedSelect } from "./FormattedSelect";
+
+import { InlineContainer, ColumnContainer, Img } from "./customComponents";
+
 const radioData = [
     {
         radioValue: 'sedan',
@@ -35,96 +38,66 @@ export const RegisterForm = () => {
         showForm ? setShowForm(false) : setShowForm(true);
     }
     return (
-        <Box
-            sx={{
-                flexDirection: 'column',
-                maxWidth: '1252px',
-                display: "flex",
-                p: '25px',
-                gap: '24px',
-                borderRadius: '4px',
-                bgcolor: 'background.paper'
-            }}>
-            <Container sx={{ textAlign: 'start', display: 'inline-flex' }}>
-                <img src={FormImage} />
-                <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <Typography
-                        component='p'
-                        sx={{ color: 'text.primary' }}
-                    >Drive with MyRide
+        <ColumnContainer
+            maxWidth = '1252px'
+            p = '25px'
+            gap = '24px'
+            borderRadius = '4px'
+            bgcolor = 'background.paper'
+            >
+
+            <InlineContainer textAlign='start'>
+                <Img src={FormImage} alt="car icon" sx={{maxWidth: '193px', maxHeight: '132px'}}/>
+                <ColumnContainer justifyContent = 'center'>
+                    <Typography variant = "h5" component='h5'>
+                        Drive with MyRide
                     </Typography>
-                    <Typography
-                        component='p'
-                        sx={{ color: 'primary.main' }}
-                    >Register as a driver using the form below. Our team will assess and get back to you within 48 hours.
+                    <Typography component='p' sx={{ color: 'primary.main' }}>
+                        Register as a driver using the form below. Our team will assess and get back to you within 48 hours.
                     </Typography>
-                </Container>
-            </Container>
+                </ColumnContainer>
+            </InlineContainer>
 
             <FormattedTextField iWidth="1264px" placeHolder="Full Name" />
 
             <TextField
+                name="name"
                 label="Full Name"
             />
             <TextField
+                name="email"
                 label="Email Address"
             />
+
             <FormattedSelect />
 
             <TextField
+                name="referal code"
                 label="Referal code"
             />
 
-            <Container sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-            }}>
-                <Typography
-                    component="p"
-                    sx={{
-                        color: '#fff',
-                        textAlign: 'start',
-                        fontSize: '16px'
-                    }}
-                >I drive my own car
+            <InlineContainer alignItems= 'center' justifyContent ='space-between'>
+                <Typography component="p" sx={{color: '#fff', textAlign: 'start'}}>
+                    I drive my own car
                 </Typography>
+                <Switch name="switch" inputProps={{ 'aria-label': 'controlled' }} onChange={toggleShowForm}/>
+            </InlineContainer>
 
-                <Switch
-                    inputProps={{ 'aria-label': 'controlled' }}
-                    onChange={toggleShowForm}
-                />
-            </Container>
 
             {showForm && (
-                <FormControl
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '16px'
-                    }}
-                >
-                    <FormLabel
-                        id="demo-radio-buttons-group-label"
-                        sx={{
-                            color: 'text.primary'
-                        }}
-                    >Select your car type
+                <FormControl sx={{ display: 'flex', alignItems: 'flex-start', gap: '16px'}}>
+                    <FormLabel id="car-type" sx={{ color: 'text.primary' }}>
+                        Select your car type
                     </FormLabel>
 
-                    <RadioGroup
-                        row
-                        name="radio-buttons-group"
-                    >
+                    <RadioGroup row name="Car type">
                         {radioData.map((category) => {
                             return (
-                                <FormControlLabel
-                                    key={category.radioValue}
-                                    value={category.radioValue}
+                                <FormControlLabel key={category.radioValue} value={category.radioValue} label=""
                                     control={
                                         <Radio
-                                            icon={<img src={category.imageLink} alt="" />}
-                                            checkedIcon={<img src={category.imageLink} alt="" />}
+                                            icon={<Img src={category.imageLink} alt={category.altContent} />}
+                                            checkedIcon={<Img src={category.imageLink} alt={category.altContent} />}
                                             sx={{
                                                 borderRadius: '10px',
                                                 '&.Mui-checked': {
@@ -144,6 +117,6 @@ export const RegisterForm = () => {
             <Container sx={{ maxWidth: '200px' }}>
                 <FormattedButton text="Submit" max="200px" />
             </Container>
-        </Box>
+        </ColumnContainer>
     );
 }
