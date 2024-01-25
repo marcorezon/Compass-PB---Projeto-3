@@ -1,15 +1,12 @@
 import { Container, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { locationData } from "../services/location/locationApi";
 import { useEffect } from "react";
+
+import countriesData from "./../../../utils/countries-and-cities";
+
 export const FormattedSelect = () => {
 
-    var local = [""];
-
-    useEffect(() => {
-        locationData.get("").then((response) => {
-          local = Object.keys(response.data.keys);
-        });
-      }, []);
+    const countries = Object.keys(countriesData);
 
     return (
         <Container sx={{gap: 'inherit'}}>
@@ -23,15 +20,12 @@ export const FormattedSelect = () => {
                     label="Contry"
                     onChange={undefined}
                 >
-                    {local.map( (country) => {
+                    {countries.map( (country) => {
                         return (
                             <MenuItem key={country} value={country}>{country}</MenuItem>
                         );
                     })}
 
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
             </FormControl>
 
