@@ -33,10 +33,12 @@ export const ClassRideCards = () => {
     return (
         <InlineContainer justifyContent='center' mt='60px' mb='101px' gap='24px'>
             {classRides.map((object) => (
-                <Card  key={object.label}
+                <Card key={object.label}
                     sx={{ 
+                        boxShadow: 'none',
                         width: '307px',
-                        textAlign: 'start' 
+                        textAlign: 'start',
+                        bgcolor: 'secondary.dark',
                     }}>
                     <CardMedia
                         sx={{ height: 214 }}
@@ -45,7 +47,7 @@ export const ClassRideCards = () => {
                         src="car"
                         image={object.image}
                     />
-                    <CardContent sx={{p: '15px'}}>
+                    <CardContent sx={{p: '15px' }}>
                         <Typography sx={{ color: 'primary.main' }}>
                             {object.label}
                         </Typography>

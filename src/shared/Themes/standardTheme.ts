@@ -15,6 +15,7 @@ export const standardTheme = createTheme({
         },
         secondary: {
             main: '#FBA403',
+            dark: '#383838'
         },
         background: {
             default: '#242424',
