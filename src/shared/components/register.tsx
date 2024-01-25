@@ -112,7 +112,7 @@ export const RegisterForm = () => {
                     </RadioGroup>
                 </FormControl>)
             }
-            <CustomButton sx={{maxWidth: '200px' }}>Submit</CustomButton>
+            <CustomButton sx={{maxWidth: '200px', bgcolor: 'secondary.main'}}>Submit</CustomButton>
         </ColumnContainer>
     );
 }

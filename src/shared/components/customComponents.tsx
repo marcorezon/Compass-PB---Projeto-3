@@ -33,6 +33,4 @@ export const Span = styled('span')({
 export const CustomButton = styled(Button)({
     height: '56px',
     width: '100%',
-    color: '#FFFFFF',
-    bgcolor: '#FBA403',
 });

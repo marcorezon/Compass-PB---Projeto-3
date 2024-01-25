@@ -27,9 +27,9 @@ export const GetARide = () => {
 
                         <TextField name='pickup' required label='Your Pickup' placeholder='' InputLabelProps={{shrink: true}}/>
 
-                        <TextField name='destination' label='Your Destination' color="primary"/>
+                        <TextField name='destination' label='Your Destination' color="primary" focused/>
 
-                        <CustomButton startIcon={<Img src={Magnifier} alt="Magnifier"/>} sx={{maxWidth: '544px'}}>Find a Driver</CustomButton>
+                        <CustomButton startIcon={<Img src={Magnifier} alt="Magnifier"/>} sx={{maxWidth: '544px', bgcolor: 'secondary.main'}}>Find a Driver</CustomButton>
                     </ColumnContainer>
             </ColumnContainer>
         </InlineContainer>
