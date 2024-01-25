@@ -52,5 +52,19 @@ export const standardTheme = createTheme({
             fontWeight: 700,
             color: "#FBA403"
         }
-    }
+    },
+    components: {
+        MuiTextField: {
+          styleOverrides: {
+            root: {
+              '--TextField-brandBorderColor': '#FFFFFF',
+              '--TextField-brandBorderHoverColor': '#FFFFFF',
+              '--TextField-brandBorderFocusedColor': '#FFFFFF',
+              '& label.Mui-focused': {
+                color: '#FFFFFF',
+              },
+            },
+          },
+        },
+    },
   });

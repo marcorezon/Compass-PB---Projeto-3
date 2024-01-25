@@ -1,5 +1,5 @@
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
-import { InlineContainer, ColumnContainer, Img, CustomButton} from "./customComponents";
+import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField} from "./customComponents";
 import { FormattedSelect } from "./FormattedSelect";
 import { useState } from "react";
 
@@ -57,21 +57,16 @@ export const RegisterForm = () => {
                 </ColumnContainer>
             </InlineContainer>
 
-            <TextField
-                name="name"
-                label="Full Name"
-            />
-            <TextField
-                name="email"
-                label="Email Address"
-            />
+            <CustomTextField name="name"
+                label="Full Name"/>
+
+            <CustomTextField name="email"
+                label="Email Address"/>
 
             <FormattedSelect />
 
-            <TextField
-                name="referal code"
-                label="Referal code"
-            />
+            <CustomTextField name="referal code"
+                label="Referal code"/>
 
             <InlineContainer alignItems= 'center' justifyContent ='space-between'>
                 <Typography component="p" sx={{color: '#fff', textAlign: 'start'}}>

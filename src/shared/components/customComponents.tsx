@@ -1,4 +1,4 @@
-import { Box, Button, styled } from "@mui/material";
+import { Box, Button, styled, TextField } from "@mui/material";
 
 export const InlineContainer = styled(Box)({
     display: 'flex',
@@ -34,3 +34,20 @@ export const CustomButton = styled(Button)({
     height: '56px',
     width: '100%',
 });
+
+export const CustomTextField = styled(TextField) ({
+    border: '1px',
+
+    // (Note: space or no space after `&` matters. See SASS "parent selector".)
+    '& .MuiOutlinedInput-root': {  // - The Input-root, inside the TextField-root
+        '& fieldset': {            // - The <fieldset> inside the Input-root
+            borderColor: '#fff',   // - Set the Input border
+        },
+        '&:hover fieldset': {
+            borderColor: 'secondary.main', // - Set the Input border when parent has :hover
+        },
+        '&.Mui-focused fieldset': { // - Set the Input border when parent is focused 
+            borderColor: 'secondary.main',
+        },
+    },
+})

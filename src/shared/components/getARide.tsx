@@ -1,4 +1,4 @@
-import { InlineContainer, ColumnContainer, Img, Span, CustomButton } from "./customComponents";
+import { InlineContainer, ColumnContainer, Img, Span, CustomButton, CustomTextField } from "./customComponents";
 import { Box, TextField, Typography } from "@mui/material";
 
 import Magnifier from "./../../../public/magnifier.svg";
@@ -25,9 +25,9 @@ export const GetARide = () => {
                             Find a ride now
                         </Typography>
 
-                        <TextField name='pickup' required label='Your Pickup' placeholder='' InputLabelProps={{shrink: true}}/>
+                        <CustomTextField name='pickup' label='Your Pickup' InputLabelProps={{shrink: true}}/>
 
-                        <TextField name='destination' label='Your Destination' color="primary" focused/>
+                        <CustomTextField name='destination' label='Your Destination' />
 
                         <CustomButton startIcon={<Img src={Magnifier} alt="Magnifier"/>} sx={{maxWidth: '544px', bgcolor: 'secondary.main'}}>Find a Driver</CustomButton>
                     </ColumnContainer>
