@@ -1,4 +1,5 @@
-import { Box, Container, Link, Typography} from "@mui/material";
+import { Box, Link, Typography} from "@mui/material";
+import { InlineContainer, ColumnContainer, Img } from "./customComponents";
 
 import facebookLogo from "./../../../public/footer/Facebook.svg";
 import instagramLogo from "./../../../public/footer/Instagram.svg";
@@ -25,35 +26,36 @@ const sectionLink = { display: 'flex', flexDirection: 'column', alignItems: 'fle
 
 export const Footer = () => {
     return (
-        <Container sx={{ display: 'inline-flex', py: '40px', mx: '80px', gap: '80px', width: '100%' }}>
-            <Container sx={{ display: 'flex', flexDirection: 'column', gap: "16px" }}>
+        <InlineContainer  py='40px' mx='80px' gap='80px'>
+            <ColumnContainer maxWidth='332px' gap='16px'>
                 <Box>
-                    <img src={whiteLogo} alt="blank logo" />
+                    <Img src={whiteLogo} alt="blank logo" sx={{width: '125px', height: '60px'}} />
                 </Box>
 
                 <Typography sx={{ color: 'text.secondary', fontSize: '16px', fontWeight: '400' }}>
                     MyRide Inc., 2nd Floor, New York, NY 10016
                 </Typography>
 
-                <Container sx={{ display: 'flex', p: '0px', gap: "16px" }}>
+                <InlineContainer gap='16px'>
                     <img src={facebookLogo} alt="facebook logo" />
                     <img src={instagramLogo} alt="instagram logo" />
                     <img src={twitterLogo} alt="twitter logo" />
-                </Container>
+                </InlineContainer>
 
-            </Container>
+            </ColumnContainer>
 
-            <Container sx={{ display: 'inline-flex', gap: '20px' }}>
+            <InlineContainer gap='20px'>
                 {footerData.map((linkSection) => {
                     return (
-                        <Container key={linkSection.identifier} sx={{ ...sectionLink }}>
+                        <ColumnContainer key={linkSection.identifier} sx={{ ...sectionLink }}>
                             <Typography sx={{ mb: '8px', color: "primary.main", fontSize: "20px" }}>
                                 {linkSection.identifier}
                             </Typography>
                             { linkSection.links.map((link) => {return (<Link key={link} href="#" underline="none" sx={{ ...footerLinkTheme }}>{link}</Link>);} ) }
-                        </Container>
-                    );})}
-            </Container>
-        </Container>
+                        </ColumnContainer>
+                    );})
+                }
+            </InlineContainer>
+        </InlineContainer>
     );
 }

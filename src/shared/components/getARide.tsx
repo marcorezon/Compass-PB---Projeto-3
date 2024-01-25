@@ -25,11 +25,11 @@ export const GetARide = () => {
                             Find a ride now
                         </Typography>
 
-                        <TextField name='pickup' required label='Your Pickup' placeholder=''/>
+                        <TextField name='pickup' required label='Your Pickup' placeholder='' InputLabelProps={{shrink: true}}/>
 
-                        <TextField name='destination' label='Your Destination'/>
+                        <TextField name='destination' label='Your Destination' color="primary"/>
 
-                        <CustomButton startIcon={<Img src={Magnifier}/>} sx={{maxWidth: '544px'}}>Find a Driver</CustomButton>
+                        <CustomButton startIcon={<Img src={Magnifier} alt="Magnifier"/>} sx={{maxWidth: '544px'}}>Find a Driver</CustomButton>
                     </ColumnContainer>
             </ColumnContainer>
         </InlineContainer>

@@ -22,13 +22,13 @@ export const FormattedSelect = () => {
     return (
         <ColumnContainer gap='20px' sx={{alignItems: 'center'}}>
             <FormControl fullWidth>
-                <InputLabel id="contry-select-label">Country</InputLabel>
+                <InputLabel id='contry-select-label'>Country</InputLabel>
                 <Select
-                    name="country"
-                    labelId="Country"
-                    id="selectCountry"
+                    name='country'
+                    labelId='Country'
+                    id='selectCountry'
                     value={country}
-                    label="Contry"
+                    label='Contry'
                     onChange={handleSelectCountry}
                 >
                     {countries.map( (country) => {
@@ -41,18 +41,18 @@ export const FormattedSelect = () => {
             </FormControl>
 
             <FormControl disabled={country === ''} fullWidth>
-                <InputLabel id="city-select-label">City</InputLabel>
+                <InputLabel id='city-select-label'>City</InputLabel>
                 <Select
-                    name="city"
-                    labelId="City"
-                    id="selectCity"
+                    name='city'
+                    labelId='City'
+                    id='selectCity'
                     value={city}
-                    label="City"
+                    label='City'
                     onChange={handleSelectCity}
                 >   
-                    {!(country === "") && (countriesData[country].map( (city: string) => {
+                    {!(country === '') && (countriesData[country].map( (city: string) => {
                         return (
-                            <MenuItem color="primary.main" key={city} value={city}>{city}</MenuItem>
+                            <MenuItem color='primary.main' key={city} value={city}>{city}</MenuItem>
                         );}))
                     }
                 </Select>

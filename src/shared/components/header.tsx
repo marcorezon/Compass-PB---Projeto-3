@@ -1,4 +1,4 @@
-import { AppBar, IconButton, Menu, MenuItem, Tab, Tabs, Box, Toolbar, Typography, styled } from "@mui/material";
+import { AppBar, IconButton, Menu, MenuItem, Tab, Tabs, Box, Toolbar } from "@mui/material";
 import { InlineContainer, Img } from "./customComponents";
 import { useState, MouseEvent } from "react";
 
@@ -21,12 +21,12 @@ export default function Header() {
   };
 
   return (
-    <AppBar position='static' sx={{ width: '100%', p: '20px', justifyContent: 'space-between', bgcolor: 'background.default', fontSize: '16px', boxShadow: 'none' }}>
+    <AppBar position='static' sx={{ width: '100%', py: '20px', justifyContent: 'space-between', bgcolor: 'background.default', fontSize: '16px', boxShadow: 'none' }}>
 
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Typography>
+        <Box>
           <Img src={IconLogo} alt='app logo' />
-        </Typography>
+        </Box>
 
         <Tabs value={0}>
           {pages.map((page) => (
