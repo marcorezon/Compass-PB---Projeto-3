@@ -1,15 +1,15 @@
-import { Container, Typography } from "@mui/material";
-import { Footer } from "../shared/components/footer";
-import { ClassRideCards } from "../shared/components/classRideCard";
-import { GetARide } from "../shared/components/getARide";
-import { RegisterForm } from "../shared/components/register";
-import { ColumnContainer } from "../shared/components/customComponents";
+import { Container, Typography } from '@mui/material';
+import { Footer } from  '../shared/components/footer';
+import { ClassRideCards } from '../shared/components/classRideCard';
+import { GetARide } from '../shared/components/getARide';
+import { RegisterForm } from '../shared/components/register-form/register';
+import { ColumnContainer } from '../shared/components/customComponents';
 
-import Header from "../shared/components/header";
+import Header from '../shared/components/header';
 
 export const Home = () => {
     return (
-    <ColumnContainer px='2%' bgcolor='background.default' fontFamily = 'Roboto' overflow='hidden'>
+    <ColumnContainer bgcolor='background.default' fontFamily = 'Roboto' overflow='hidden'>
 
         <Header />
 

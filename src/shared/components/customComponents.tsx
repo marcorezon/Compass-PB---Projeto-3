@@ -1,4 +1,4 @@
-import { Box, Button, Select, styled, TextField } from "@mui/material";
+import { Box, Button, Select, styled, TextField } from '@mui/material';
 
 export const InlineContainer = styled(Box)({
     display: 'flex',
@@ -54,7 +54,6 @@ export const CustomTextField = styled(TextField) ({
 
 export const CustomSelect = styled(Select) ({
         textAlign: 'start',
-        color: 'primary',
         '&.MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root': {
             color: 'rgba(228, 219, 233, 1)',
         },
@@ -68,6 +67,6 @@ export const CustomSelect = styled(Select) ({
           borderColor: 'rgba(228, 219, 233, 1)',
         },
         '.MuiSvgIcon-root ': {
-          fill: "white",
+          fill: 'white',
         }
 })

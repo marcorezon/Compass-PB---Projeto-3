@@ -1,27 +1,27 @@
-import { Box, Link, Typography} from "@mui/material";
-import { InlineContainer, ColumnContainer, Img } from "./customComponents";
+import { Box, Link, Typography} from '@mui/material';
+import { InlineContainer, ColumnContainer, Img } from './customComponents';
 
-import facebookLogo from "./../../../public/footer/Facebook.svg";
-import instagramLogo from "./../../../public/footer/Instagram.svg";
-import twitterLogo from "./../../../public/footer/Twitter.svg";
-import whiteLogo from "./../../../public/footer/Logo.svg";
+import facebookLogo from './../../../public/footer/Facebook.svg';
+import instagramLogo from './../../../public/footer/Instagram.svg';
+import twitterLogo from './../../../public/footer/Twitter.svg';
+import whiteLogo from './../../../public/footer/Logo.svg';
 
 const footerData = [
     {
-        identifier: "Company",
+        identifier: 'Company',
         links: ['About us', 'News', 'Careers', 'How we work'],
     },
     {
-        identifier: "Support",
+        identifier: 'Support',
         links: ['FAQ', 'US Office', 'Asia Office', 'Help Center'],
     },
     {
-        identifier: "More",
+        identifier: 'More',
         links: ['Become a partner', 'Partner Support', 'Mobile app links'],
     }
 ]
 
-const footerLinkTheme = { p: '0', color: "primary.main", textTransform: "none", fontSize: '16px' };
+const footerLinkTheme = { p: '0', color: 'primary.main', textTransform: 'none', fontSize: '16px' };
 const sectionLink = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px' }
 
 export const Footer = () => {
@@ -29,7 +29,7 @@ export const Footer = () => {
         <InlineContainer  py='40px' mx='80px' gap='80px'>
             <ColumnContainer maxWidth='332px' gap='16px'>
                 <Box>
-                    <Img src={whiteLogo} alt="blank logo" sx={{width: '125px', height: '60px'}} />
+                    <Img src={whiteLogo} alt='blank logo' sx={{width: '125px', height: '60px'}} />
                 </Box>
 
                 <Typography sx={{ color: 'text.secondary', fontSize: '16px', fontWeight: '400' }}>
@@ -37,9 +37,9 @@ export const Footer = () => {
                 </Typography>
 
                 <InlineContainer gap='16px'>
-                    <img src={facebookLogo} alt="facebook logo" />
-                    <img src={instagramLogo} alt="instagram logo" />
-                    <img src={twitterLogo} alt="twitter logo" />
+                    <img src={facebookLogo} alt='facebook logo' />
+                    <img src={instagramLogo} alt='instagram logo' />
+                    <img src={twitterLogo} alt='twitter logo' />
                 </InlineContainer>
 
             </ColumnContainer>
@@ -48,10 +48,10 @@ export const Footer = () => {
                 {footerData.map((linkSection) => {
                     return (
                         <ColumnContainer key={linkSection.identifier} sx={{ ...sectionLink }}>
-                            <Typography sx={{ mb: '8px', color: "primary.main", fontSize: "20px" }}>
+                            <Typography sx={{ mb: '8px', color: 'primary.main', fontSize: '20px' }}>
                                 {linkSection.identifier}
                             </Typography>
-                            { linkSection.links.map((link) => {return (<Link key={link} href="#" underline="none" sx={{ ...footerLinkTheme }}>{link}</Link>);} ) }
+                            { linkSection.links.map((link) => {return (<Link key={link} href='#' underline='none' sx={{ ...footerLinkTheme }}>{link}</Link>);} ) }
                         </ColumnContainer>
                     );})
                 }

@@ -1,15 +1,20 @@
-import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { ColumnContainer, CustomSelect } from "./customComponents";
-import { useState } from "react";
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { ColumnContainer, CustomSelect } from './customComponents';
+import { useState } from 'react';
 
-import countriesData from "./../../../utils/countries-and-cities";
+import countriesData from './../../../utils/countries-and-cities';
 
-export const FormattedSelect = () => {
+interface LocationRef {
+    countryRef: HTMLElement;
+    cityRef: HTMLElement;
+}
+
+export default function FormattedSelect ({countryRef, cityRef}: LocationRef) {
 
     const countries = Object.keys(countriesData);
 
-    const [country, setCountry] = useState('');
-    const [city, setCity] = useState('');
+    const [country, setCountry] = useState<String>('');
+    const [city, setCity] = useState<String>('');
 
     function handleSelectCountry (event: SelectChangeEvent) {
         setCountry(event.target.value as string);
@@ -26,6 +31,7 @@ export const FormattedSelect = () => {
                 
                 <CustomSelect
                     name='country'
+                    inputRef={countryRef as any}
                     labelId='Country'
                     id='selectCountry'
                     value={country}
@@ -45,6 +51,7 @@ export const FormattedSelect = () => {
 
                 <CustomSelect
                     name='city'
+                    inputRef={cityRef as any}
                     labelId='City'
                     id='selectCity'
                     value={city}
@@ -53,7 +60,7 @@ export const FormattedSelect = () => {
                 >
                     {!(country === '') && (countriesData[country].map( (city: string) => {
                         return (
-                            <MenuItem sx={{color: 'primary.main'}} key={city} value={city}>{city}</MenuItem>
+                            <MenuItem sx={{color: 'primary.main'}} value={city}>{city}</MenuItem>
                         );}))
                     }
                 </CustomSelect>

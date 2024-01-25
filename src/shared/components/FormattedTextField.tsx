@@ -1,11 +1,11 @@
-import { TextField } from "@mui/material";
+import { TextField } from '@mui/material';
 
 export const FormattedTextField = ({ iWidth, placeHolder }) => {
     return (
         <TextField
-            variant="outlined"
+            variant='outlined'
             sx={{
-                color: "primary.light",
+                color: 'primary.light',
                 maxWidth: {iWidth},
                 height: '57px',
             }}

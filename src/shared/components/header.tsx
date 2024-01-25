@@ -1,10 +1,10 @@
-import { AppBar, IconButton, Menu, MenuItem, Tab, Tabs, Box, Toolbar } from "@mui/material";
-import { InlineContainer, Img } from "./customComponents";
-import { useState, MouseEvent } from "react";
+import { AppBar, IconButton, Menu, MenuItem, Tab, Tabs, Box, Toolbar } from '@mui/material';
+import { InlineContainer, Img } from './customComponents';
+import { useState, MouseEvent } from 'react';
 
-import IconLogo from "./../../../public/Logo.svg";
-import NotificationIcon from "./../../../public/bell-icon.svg";
-import userAvatarTest from "./../../../public/userAvatar.png";
+import IconLogo from './../../../public/Logo.svg';
+import NotificationIcon from './../../../public/bell-icon.svg';
+import userAvatarTest from './../../../public/userAvatar.png';
 
 
 export default function Header() {
@@ -39,44 +39,12 @@ export default function Header() {
             <IconButton>
                   <Img src={NotificationIcon} alt='notification bell' sx={{width: '24px', height: '27px'}} />
               </IconButton>
-
-              <Menu
-                keepMounted
-                id='notification-appbar'
-                anchorEl={anchorEl}
-                anchorOrigin={{ vertical: 'top', horizontal: 'right',}}
-                transformOrigin={{vertical: 'top', horizontal: 'right',}}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
           </Box>
 
           <Box>
             <IconButton sx={{ height: '36px', width: '36px' }}>
               <Img src={userAvatarTest} alt='user avatar' sx={{ height: '36px', width: '36px', borderRadius: '36px' }}/>
             </IconButton>
-
-            <Menu
-              id='user-appbar'
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-            </Menu>
           </Box>
         </InlineContainer>
       </Toolbar>

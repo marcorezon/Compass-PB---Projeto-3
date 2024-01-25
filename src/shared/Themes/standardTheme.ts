@@ -1,9 +1,9 @@
-import { createTheme } from "@mui/material";
-
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+
+import { createTheme } from '@mui/material';
 
 export const standardTheme = createTheme({
     palette: {
@@ -31,7 +31,7 @@ export const standardTheme = createTheme({
         h1: {
             fontSize: 26,
             fontWeight: 400,
-            color: "#FFFFFF"
+            color: '#FFFFFF'
         },
         h2: {
             fontSize: '50px',
@@ -41,17 +41,17 @@ export const standardTheme = createTheme({
         h3: {
             fontSize: 26,
             fontWeight: 400,
-            color: "#FBA403"
+            color: '#FBA403'
         },
         h4: {
-            fontSize: "45px",
+            fontSize: '45px',
             fontWeight: 700,
             color: '#FFFFFF'
         },
         h5:  {
             fontSize: 27,
             fontWeight: 700,
-            color: "#FBA403"
+            color: '#FBA403'
         }
     },
     components: {
