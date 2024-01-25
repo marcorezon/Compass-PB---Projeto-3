@@ -22,8 +22,8 @@ const footerData = [
     }
 ]
 
-const footerTextTheme = {mb: '8px', color: "primary.light", fontSize: "20px"};
-const footerLinkTheme = {p: '0', color: "primary.light", textTransform :"none", fontSize: '16px'};
+const footerTextTheme = {mb: '8px', color: "primary.main", fontSize: "20px"};
+const footerLinkTheme = {p: '0', color: "primary.main", textTransform :"none", fontSize: '16px'};
 const footerLocation = {color: 'text.secondary', fontSize: '16px', fontWeight: '400'};
 const footerTheme = {
     display: 'inline-flex', 

@@ -50,8 +50,9 @@ export const FormattedSelect = () => {
                 >   
                     {!(country === "") && (countriesData[country].map( (city: string) => {
                         return (
-                            <MenuItem key={city} value={city}>{city}</MenuItem>
-                        );}))}
+                            <MenuItem color="primary.main" key={city} value={city}>{city}</MenuItem>
+                        );}))
+                    }
   
                 </Select>
             </FormControl>

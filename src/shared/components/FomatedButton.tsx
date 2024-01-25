@@ -7,8 +7,8 @@ export const FormattedButton = ({text="", max=""}) => {
                 height: '56px',
                 maxWidth: {max},
                 width: '100%',
-                color: 'primary.light',
-                bgcolor: 'primary.main'
+                color: 'primary.main',
+                bgcolor: 'text.primary'
             }}
         >
         {text}

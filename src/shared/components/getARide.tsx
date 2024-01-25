@@ -39,7 +39,7 @@ export const GetARide = () => {
                 <Typography
                     sx={{
                         fontSize: '26px',
-                        color: 'primary.light'
+                        color: 'primary.main'
                     }} 
                     variant="h1" 
                     component='h2'
@@ -47,10 +47,10 @@ export const GetARide = () => {
                 </Typography>
 
                 <Typography 
-                    sx={{fontSize: '50px', color: 'primary.light'}}
+                    sx={{fontSize: '50px', color: 'primary.main'}}
                     variant="h1" 
                     component='h2'
-                >   Book with <Typography component="span" sx={{fontSize: '50px', color: 'primary.main'}}><i>my</i>RIDE</Typography> now!
+                >   Book with <Typography component="span" sx={{fontSize: '50px', color: 'text.primary'}}><i>my</i>RIDE</Typography> now!
                 </Typography>
 
                 <Container
@@ -68,7 +68,7 @@ export const GetARide = () => {
                     <Typography
                         sx={{
                             fontSize: '26px',
-                            color: 'primary.light'
+                            color: 'primary.main'
                         }}
                     >Find a ride now
                     </Typography>

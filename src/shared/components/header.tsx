@@ -45,7 +45,7 @@ export default function Header() {
                   opacity: [0.9, 0.8, 0.7]
                 },
                 textTransform :'none',
-                color: 'primary.light',
+                color: 'primary.main',
               }}
             />
           ))}

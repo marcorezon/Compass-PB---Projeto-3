@@ -49,7 +49,7 @@ export const ClassRideCards = () => {
                         image={object.image}
                     />
                     <CardContent sx={{p: '15px'}}>
-                        <Typography sx={{ color: 'primary.light' }}>
+                        <Typography sx={{ color: 'primary.main' }}>
                             {object.label}
                         </Typography>
                         <Typography sx={{ color: 'primary.dark' }}>

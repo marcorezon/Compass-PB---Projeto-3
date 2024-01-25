@@ -50,12 +50,12 @@ export const RegisterForm = () => {
                 <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                     <Typography
                         component='p'
-                        sx={{ color: 'primary.main' }}
+                        sx={{ color: 'text.primary' }}
                     >Drive with MyRide
                     </Typography>
                     <Typography
                         component='p'
-                        sx={{ color: 'primary.light' }}
+                        sx={{ color: 'primary.main' }}
                     >Register as a driver using the form below. Our team will assess and get back to you within 48 hours.
                     </Typography>
                 </Container>
@@ -70,7 +70,7 @@ export const RegisterForm = () => {
                 label="Email Address"
             />
             <FormattedSelect />
-     
+
             <TextField
                 label="Referal code"
             />
@@ -107,7 +107,7 @@ export const RegisterForm = () => {
                     <FormLabel
                         id="demo-radio-buttons-group-label"
                         sx={{
-                            color: 'primary.main'
+                            color: 'text.primary'
                         }}
                     >Select your car type
                     </FormLabel>
@@ -122,18 +122,18 @@ export const RegisterForm = () => {
                                     key={category.radioValue}
                                     value={category.radioValue}
                                     control={
-                                        <Radio 
+                                        <Radio
                                             icon={<img src={category.imageLink} alt="" />}
-                                            checkedIcon={<img src={category.imageLink} alt=""/>}
+                                            checkedIcon={<img src={category.imageLink} alt="" />}
                                             sx={{
                                                 borderRadius: '10px',
                                                 '&.Mui-checked': {
-                                                  opacity: "0.3"
+                                                    opacity: "0.3"
                                                 },
                                                 '&:hover': {
                                                     opacity: "0.5"
                                                 }
-                                              }}
+                                            }}
                                         />}
                                 />
                             );
@@ -141,7 +141,7 @@ export const RegisterForm = () => {
                     </RadioGroup>
                 </FormControl>)
             }
-            <Container sx={{maxWidth: '200px'}}>
+            <Container sx={{ maxWidth: '200px' }}>
                 <FormattedButton text="Submit" max="200px" />
             </Container>
         </Box>

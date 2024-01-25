@@ -36,7 +36,7 @@ export const Home = () => {
                 variant="h1" 
                 component="h2"
                 sx={{
-                    color: 'primary.main',
+                    color: 'text.primary',
                     fontSize: "26px"
                 }}
             >WHY SHOULD YOU RIDE WITH US?
@@ -46,7 +46,7 @@ export const Home = () => {
                 variant="h1" 
                 component="h2"
                 sx={{
-                    color: 'primary.light',
+                    color: 'primary.main',
                     fontSize: "45px"
                 }}
             >Best in class rides
