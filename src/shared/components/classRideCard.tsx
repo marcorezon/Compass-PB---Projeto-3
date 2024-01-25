@@ -56,7 +56,7 @@ export const ClassRideCards = () => {
 
                     <Container sx={{ display: 'flex', justifyContent: 'flex-end', pb: '14px', py:'14px' }}>
                         <CardActions sx={{p: '0'}}>
-                            <Link href='#' underline='none' marginBottom="18px" color="text.primary">LEARN MORE</Link>
+                            <Link href='#' underline='none' marginBottom="18px" color="primary.contrastText">LEARN MORE</Link>
                         </CardActions>
                     </Container>
                 </Card>

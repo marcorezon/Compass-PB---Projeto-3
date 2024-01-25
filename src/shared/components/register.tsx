@@ -1,5 +1,5 @@
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, TextField, Typography } from "@mui/material";
-import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField} from "./customComponents";
+import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField } from "./customComponents";
 import { FormattedSelect } from "./FormattedSelect";
 import { useState } from "react";
 
@@ -78,7 +78,7 @@ export const RegisterForm = () => {
 
             {showForm && (
                 <FormControl sx={{ display: 'flex', alignItems: 'flex-start', gap: '16px'}}>
-                    <FormLabel id="car-type" sx={{ color: 'text.primary' }}>
+                    <FormLabel id="car-type" sx={{ color: 'primary.contrastText' }}>
                         Select your car type
                     </FormLabel>
 

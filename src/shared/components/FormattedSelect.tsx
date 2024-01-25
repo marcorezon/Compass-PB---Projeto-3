@@ -1,5 +1,5 @@
 import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
-import { ColumnContainer } from "./customComponents";
+import { ColumnContainer, CustomSelect } from "./customComponents";
 import { useState } from "react";
 
 import countriesData from "./../../../utils/countries-and-cities";
@@ -23,7 +23,8 @@ export const FormattedSelect = () => {
         <ColumnContainer gap='20px' sx={{alignItems: 'center'}}>
             <FormControl fullWidth>
                 <InputLabel id='contry-select-label'>Country</InputLabel>
-                <Select
+                
+                <CustomSelect
                     name='country'
                     labelId='Country'
                     id='selectCountry'
@@ -33,29 +34,29 @@ export const FormattedSelect = () => {
                 >
                     {countries.map( (country) => {
                         return (
-                            <MenuItem key={country} value={country}>{country}</MenuItem>
+                            <MenuItem sx={{color: 'primary.main'}} key={country} value={country}>{country}</MenuItem>
                         );})
                     }
-
-                </Select>
+                </CustomSelect>
             </FormControl>
 
-            <FormControl disabled={country === ''} fullWidth>
+            <FormControl fullWidth>
                 <InputLabel id='city-select-label'>City</InputLabel>
-                <Select
+
+                <CustomSelect
                     name='city'
                     labelId='City'
                     id='selectCity'
                     value={city}
                     label='City'
                     onChange={handleSelectCity}
-                >   
+                >
                     {!(country === '') && (countriesData[country].map( (city: string) => {
                         return (
-                            <MenuItem color='primary.main' key={city} value={city}>{city}</MenuItem>
+                            <MenuItem sx={{color: 'primary.main'}} key={city} value={city}>{city}</MenuItem>
                         );}))
                     }
-                </Select>
+                </CustomSelect>
             </FormControl>
         </ColumnContainer>
 

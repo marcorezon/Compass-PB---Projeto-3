@@ -1,4 +1,4 @@
-import { Box, Button, styled, TextField } from "@mui/material";
+import { Box, Button, Select, styled, TextField } from "@mui/material";
 
 export const InlineContainer = styled(Box)({
     display: 'flex',
@@ -41,13 +41,33 @@ export const CustomTextField = styled(TextField) ({
     // (Note: space or no space after `&` matters. See SASS "parent selector".)
     '& .MuiOutlinedInput-root': {  // - The Input-root, inside the TextField-root
         '& fieldset': {            // - The <fieldset> inside the Input-root
-            borderColor: '#fff',   // - Set the Input border
+            borderColor: 'rgba(228, 219, 233, 0.7)',   // - Set the Input border
         },
         '&:hover fieldset': {
-            borderColor: 'secondary.main', // - Set the Input border when parent has :hover
+            borderColor: 'rgba(228, 219, 233, 1)', // - Set the Input border when parent has :hover
         },
         '&.Mui-focused fieldset': { // - Set the Input border when parent is focused 
-            borderColor: 'secondary.main',
+            borderColor: 'rgba(228, 219, 233, 1)',
         },
     },
+})
+
+export const CustomSelect = styled(Select) ({
+        textAlign: 'start',
+        color: 'primary',
+        '&.MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root': {
+            color: 'rgba(228, 219, 233, 1)',
+        },
+        '.MuiOutlinedInput-notchedOutline': {
+          borderColor: 'rgba(228, 219, 233, 0.7)',
+        },
+        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'rgba(228, 219, 233, 1)',
+        },
+        '&:hover .MuiOutlinedInput-notchedOutline': {
+          borderColor: 'rgba(228, 219, 233, 1)',
+        },
+        '.MuiSvgIcon-root ': {
+          fill: "white",
+        }
 })
