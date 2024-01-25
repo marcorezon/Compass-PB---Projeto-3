@@ -8,7 +8,7 @@ export const GetARide = () => {
     return (
         <InlineContainer alignItems='center' justifyContent='center' my='74px' gap='42px'>
             <Box>
-                <Img src={RideImage} alt='taxi image' sx={{ maxHeight: '593px', maxWidth: '610px' }} />
+                <Img src={RideImage} alt='taxi image' sx={{ maxWidth: '610px', maxHeight: '593px'}} />
             </Box>
 
             <ColumnContainer maxWidth='610px' gap='15px'>
@@ -20,7 +20,7 @@ export const GetARide = () => {
                     Book with <Span sx={{ color: 'primary.contrastText' }}><i>my</i>RIDE</Span> now!
                 </Typography>
 
-                <ColumnContainer justifySelf='center' maxWidth='610px' gap='15px' padding="33px" bgcolor='background.paper' borderRadius='4px'>
+                <ColumnContainer justifySelf='center' maxWidth='577px' gap='15px' padding="33px" bgcolor='primary.light' borderRadius='4px'>
                     <Typography sx={{ fontSize: '26px', color: 'primary.main' }}>
                         Find a ride now
                     </Typography>
