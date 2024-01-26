@@ -2,12 +2,22 @@ import { Container, Typography } from '@mui/material';
 import { Footer } from  '../shared/components/footer';
 import { ClassRideCards } from '../shared/components/classRideCard';
 import { GetARide } from '../shared/components/getARide';
-import { FormRegister } from '../shared/components/register-form/formRegister';
+import FormRegister from '../shared/components/register-form/formRegister';
 import { ColumnContainer } from '../shared/components/customComponents';
 
+import { useState } from 'react';
+
 import Header from '../shared/components/header';
+import RegisterSuccess from '../shared/components/register-form/registerSuccess';
 
 export const Home = () => {
+
+    const [isRegisterSucceed, setIsRegisterSucceed] = useState(false);
+
+    function toggleRegisterSucceed () {
+        isRegisterSucceed ? setIsRegisterSucceed(false) : setIsRegisterSucceed(true);
+    }
+
     return (
     <ColumnContainer bgcolor='background.default' fontFamily = 'Roboto' overflow='hidden'>
 
@@ -36,7 +46,10 @@ export const Home = () => {
             </Typography>
             
             <ClassRideCards />
-            <FormRegister />
+
+            { isRegisterSucceed? 
+                <RegisterSuccess toggleSucceed={toggleRegisterSucceed} /> 
+                : <FormRegister toggleSucceed={toggleRegisterSucceed} /> }
             
         </Container>
         <Footer />

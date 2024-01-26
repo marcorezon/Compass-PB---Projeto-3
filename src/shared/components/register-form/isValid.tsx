@@ -15,7 +15,5 @@ export default function isValid (formErrors: Errors) {
         }
     }
     
-    console.log(errorsCounter);
-    console.log(errorsCounter !=0 ? true : false);
-    return (errorsCounter !=0 ? true : false);
+    return (errorsCounter === 0 ? true : false);
 }

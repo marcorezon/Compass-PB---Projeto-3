@@ -10,9 +10,8 @@ import SelectLocation from '../selectLocation';
 import validate from './validateForm';
 import isValid from './isValid';
 import postUserRegister from './postUserRegister';
-import RegisterSuccess from './registerSuccess';
 
-export const FormRegister = () => {
+export default function FormRegister ({ toggleSucceed }) {
 
     const radioData = [
         {
@@ -46,13 +45,14 @@ export const FormRegister = () => {
         switch: useRef<HTMLElement>(),
         carType: undefined
     }
-    const [validationErrors, setValidationErrors] = useState<Errors>({} as Errors);
 
-    const [isValidated, setIsValidated] = useState<boolean>(false);
+    const currentRenderKeys = {
+        validated: false
+    }
+
+    const [validationErrors, setValidationErrors] = useState<Errors>({initial: 'empty'} as Errors);
 
     const [showRadioOptions, setShowRadioOptions] = useState<boolean>(false);
-
-    const [showSucessScreen, setShowSucessScreen] = useState<boolean>(false);
 
 
     function toggleShowRadioOptions() {
@@ -64,17 +64,18 @@ export const FormRegister = () => {
     }
 
     function handleSubmit() {
-        setValidationErrors({ ...validate(formRefs) });
-        setIsValidated((isValid(validationErrors)));
-        console.log(validationErrors);
-        console.log('is validated: ' + isValidated);
-        if(isValidated) {
-            setShowSucessScreen(postUserRegister({... formRefs}));
+        toggleSucceed;
+        console.log(toggleSucceed)
+
+
+        setValidationErrors({...validate(formRefs) });
+        currentRenderKeys.validated = (isValid({...validationErrors}));
+        console.log(currentRenderKeys.validated);
+        if(currentRenderKeys.validated) {
+            (postUserRegister({... formRefs}));
+            toggleSucceed();
         }
     }
-
-    if(showSucessScreen) 
-        return (<RegisterSuccess />)
 
     return (
         <ColumnContainer
