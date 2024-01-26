@@ -15,10 +15,22 @@ export default function RegisterSuccess ({ toggleSucceed }) {
       })
         .then((response) => response.json())
         .then((data) => {
-          setUserData(data[1]);
+          setUserData(data[data.length - 1]);
         })
         .catch((error) => console.log(error));
     }, []);
+
+    function ownsCar () {
+        if(userData.driveOwnCar) {
+            return (
+                <>
+                    <Typography>Own Car: yes</Typography>
+                    <Typography>Car type: sedan</Typography>
+
+                </>
+            );
+        }
+    }
 
     return (
         <ColumnContainer 
@@ -32,7 +44,7 @@ export default function RegisterSuccess ({ toggleSucceed }) {
             <InlineContainer  alignItems='center' justifyContent='center' gap='15px'>
                 <Img src={checkedIcon} alt='success icon' sx={{maxWidth:'45px', maxHeight:'45px'}} />
                 <Typography variant='h2' component='h5' fontSize='45px'>
-                    Welcome Marco
+                    Welcome {userData.name}
                 </Typography>
             </InlineContainer>
 
@@ -42,7 +54,7 @@ export default function RegisterSuccess ({ toggleSucceed }) {
                     <Typography>Country: {userData.country}</Typography>
                     <Typography>City: {userData.city}</Typography>
                     <Typography>Referral Code: {userData.referralCode}</Typography>
-                    <Typography>Own Car: {userData.driveOwnCar}</Typography>
+                    <Typography>{ownsCar()}</Typography>
             </ColumnContainer>
 
             <CustomButton onClick={toggleSucceed} sx={{ maxWidth: '200px', bgcolor: 'secondary.main', fontSize: '14px' }}>

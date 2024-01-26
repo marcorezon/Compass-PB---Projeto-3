@@ -91,6 +91,6 @@ export default function validate (formData: any) {
             errors.switch = undefined;
             errors.carType = undefined;
         }
-
+    console.log(errors);
     return errors;
 }

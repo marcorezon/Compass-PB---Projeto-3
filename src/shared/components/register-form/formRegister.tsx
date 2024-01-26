@@ -64,13 +64,9 @@ export default function FormRegister ({ toggleSucceed }) {
     }
 
     function handleSubmit() {
-        toggleSucceed;
-        console.log(toggleSucceed)
-
-
         setValidationErrors({...validate(formRefs) });
         currentRenderKeys.validated = (isValid({...validationErrors}));
-        console.log(currentRenderKeys.validated);
+
         if(currentRenderKeys.validated) {
             (postUserRegister({... formRefs}));
             toggleSucceed();

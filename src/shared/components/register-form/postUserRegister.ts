@@ -1,5 +1,7 @@
 export default function postUserRegister (formRefs) {
 
+    console.log(formRefs);
+    
     const valuesObject = {
         name: formRefs.name.current.value,
         email: formRefs.email.current.value,
@@ -7,7 +9,7 @@ export default function postUserRegister (formRefs) {
         city: formRefs.city.current.value,
         referralCode: formRefs.referralCode.current.value,
         driveOwnCar: formRefs.switch.current.checked,
-        carType: ((formRefs.switch.current.checked) ? formRefs.carType: undefined)
+        carType: ((formRefs.switch.current.checked) ? formRefs.carType : '')
     }
 
     console.log(valuesObject)
@@ -16,7 +18,7 @@ export default function postUserRegister (formRefs) {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(valuesObject)
-    }).then(() => location.reload())
+    }).then()
 
     return true;
 }
