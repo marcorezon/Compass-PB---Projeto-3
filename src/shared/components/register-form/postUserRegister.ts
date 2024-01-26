@@ -17,4 +17,6 @@ export default function postUserRegister (formRefs) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(valuesObject)
     }).then(() => location.reload())
+
+    return true;
 }

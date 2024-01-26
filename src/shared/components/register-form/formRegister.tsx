@@ -1,4 +1,4 @@
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, Typography } from '@mui/material';
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, Typography, fabClasses } from '@mui/material';
 import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField } from '../customComponents';
 import { useState, useRef } from 'react';
 import { Errors } from './validateForm';
@@ -10,6 +10,7 @@ import SelectLocation from '../selectLocation';
 import validate from './validateForm';
 import isValid from './isValid';
 import postUserRegister from './postUserRegister';
+import RegisterSuccess from './registerSuccess';
 
 export const FormRegister = () => {
 
@@ -36,9 +37,6 @@ export const FormRegister = () => {
         },
     ]
 
-    const [validationErrors, setValidationErrors] = useState<Errors>({} as Errors);
-
-
     const formRefs = {
         name: useRef<HTMLElement>(),
         email: useRef<HTMLElement>(),
@@ -48,13 +46,17 @@ export const FormRegister = () => {
         switch: useRef<HTMLElement>(),
         carType: undefined
     }
+    const [validationErrors, setValidationErrors] = useState<Errors>({} as Errors);
 
-    const [isValidated, setIsValidated] = useState<boolean>(true);
-    const [showForm, setShowForm] = useState<boolean>(false);
+    const [isValidated, setIsValidated] = useState<boolean>(false);
+
+    const [showRadioOptions, setShowRadioOptions] = useState<boolean>(false);
+
+    const [showSucessScreen, setShowSucessScreen] = useState<boolean>(false);
 
 
-    function toggleShowForm() {
-        showForm ? setShowForm(false) : setShowForm(true);
+    function toggleShowRadioOptions() {
+        showRadioOptions ? setShowRadioOptions(false) : setShowRadioOptions(true);
     }
 
     function handleCarSelect(event: any) {
@@ -62,16 +64,18 @@ export const FormRegister = () => {
     }
 
     function handleSubmit() {
-        console.log(validationErrors);
         setValidationErrors({ ...validate(formRefs) });
-        console.log(validationErrors);
-        console.log(formRefs);
         setIsValidated((isValid(validationErrors)));
-        console.log('Is validated: ' + isValidated);
+        console.log(validationErrors);
+        console.log('is validated: ' + isValidated);
         if(isValidated) {
-            postUserRegister({... formRefs});
+            setShowSucessScreen(postUserRegister({... formRefs}));
         }
     }
+
+    if(showSucessScreen) 
+        return (<RegisterSuccess />)
+
     return (
         <ColumnContainer
             alignSelf='center'
@@ -138,18 +142,18 @@ export const FormRegister = () => {
                     color="secondary"
                     inputRef={formRefs.switch}
                     inputProps={{ 'aria-label': 'controlled' }}
-                    onChange={toggleShowForm}
+                    onChange={toggleShowRadioOptions}
                 />
             </InlineContainer>
 
 
-            {showForm && (
+            {showRadioOptions && (
                 <FormControl sx={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
                     <FormLabel id='car-type' sx={{ color: 'primary.contrastText' }}>
                         Select your car type
                     </FormLabel>
 
-                    <RadioGroup ref={formRefs.carType} row name='Car type'>
+                    <RadioGroup ref={formRefs.carType} row name='Car type' defaultValue={false}>
                         {radioData.map((category) => {
                             return (
                                 <FormControlLabel key={category.radioValue} value={category.radioValue} label=''

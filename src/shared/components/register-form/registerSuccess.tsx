@@ -20,7 +20,9 @@ export default function RegisterSuccess () {
         .catch((error) => console.log(error));
     }, []);
 
-    console.log(userData);
+    function handleClick () {
+        return false;
+    }
 
     return (
         <ColumnContainer alignItems='center' bgcolor='background.paper' borderRadius='10px' p='20px' gap='30px'>
@@ -40,7 +42,7 @@ export default function RegisterSuccess () {
                     <Typography>Own Car: {userData.driveOwnCar}</Typography>
             </ColumnContainer>
 
-            <CustomButton sx={{ maxWidth: '200px', bgcolor: 'secondary.main', fontSize: '14px' }}>
+            <CustomButton onClick={handleClick} sx={{ maxWidth: '200px', bgcolor: 'secondary.main', fontSize: '14px' }}>
                 Submit a new car
             </CustomButton>
         </ColumnContainer>

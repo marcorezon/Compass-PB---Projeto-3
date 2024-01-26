@@ -5,7 +5,6 @@ import { GetARide } from '../shared/components/getARide';
 import { FormRegister } from '../shared/components/register-form/formRegister';
 import { ColumnContainer } from '../shared/components/customComponents';
 
-import RegisterSuccess from '../shared/components/register-form/registerSuccess';
 import Header from '../shared/components/header';
 
 export const Home = () => {
@@ -37,9 +36,8 @@ export const Home = () => {
             </Typography>
             
             <ClassRideCards />
-
             <FormRegister />
-            <RegisterSuccess />
+            
         </Container>
         <Footer />
     </ColumnContainer>

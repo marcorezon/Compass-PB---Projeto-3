@@ -78,7 +78,9 @@ export default function validate (formData: any) {
         }
         
      //Switch and car type validation   
-        if (formData.switch.current.checked) {
+        if (formData.switch.current.checked === true) {
+            console.log(formData.switch.current.checked);
+            console.log(formData.cartType);
             if (formData.carType === undefined) {
                 errors.carType = 'Select a vehicle type';
             } else {
