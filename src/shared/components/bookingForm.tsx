@@ -4,7 +4,7 @@ import { Box, TextField, Typography } from '@mui/material';
 import Magnifier from './../../../public/magnifier.svg';
 import getARide from './../../../public/get-a-ride.svg';
 
-export const GetARide = () => {
+export const BookingForm = () => {
     return (
         <InlineContainer alignItems='center' justifyContent='center' my='74px' gap='42px'>
             <Box>

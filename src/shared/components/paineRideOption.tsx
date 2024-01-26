@@ -1,7 +1,7 @@
 import { Container, Link, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { InlineContainer } from './customComponents';
 
-export const ClassRideCards = () => {
+export const PainelRideOptions = () => {
 
     const classRides = [
         {

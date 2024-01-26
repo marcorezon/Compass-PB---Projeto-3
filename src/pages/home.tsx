@@ -1,14 +1,14 @@
 import { Container, Typography } from '@mui/material';
 import { Footer } from  '../shared/components/footer';
-import { ClassRideCards } from '../shared/components/classRideCard';
-import { GetARide } from '../shared/components/getARide';
+import { PainelRideOptions } from '../shared/components/paineRideOption';
+import { BookingForm } from '../shared/components/bookingForm';
 import FormRegister from '../shared/components/register-form/formRegister';
 import { ColumnContainer } from '../shared/components/customComponents';
 
 import { useState } from 'react';
 
-import Header from '../shared/components/header';
-import RegisterSuccess from '../shared/components/register-form/registerSuccess';
+import NavBar from '../shared/components/navBar';
+import RegisterSuccess from '../shared/components/registerSuccess';
 
 export const Home = () => {
 
@@ -21,9 +21,9 @@ export const Home = () => {
     return (
     <ColumnContainer bgcolor='background.default' fontFamily = 'Roboto' overflow='hidden'>
 
-        <Header />
+        <NavBar />
 
-        <GetARide />
+        <BookingForm />
 
         <Container
             maxWidth={false} 
@@ -45,7 +45,7 @@ export const Home = () => {
                 Best in class rides
             </Typography>
             
-            <ClassRideCards />
+            <PainelRideOptions />
 
             { isRegisterSucceed? 
                 <RegisterSuccess toggleSucceed={toggleRegisterSucceed} /> 

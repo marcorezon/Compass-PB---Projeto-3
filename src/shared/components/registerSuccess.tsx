@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
-import { ColumnContainer, CustomButton, InlineContainer, Img } from '../customComponents';
+import { ColumnContainer, CustomButton, InlineContainer, Img } from './customComponents';
 import { useEffect, useState } from "react";
 
-import checkedIcon from './../../../../public/check icon 1.svg';
+import checkedIcon from './../../../public/check icon 1.svg';
 
 
 export default function RegisterSuccess ({ toggleSucceed }) {

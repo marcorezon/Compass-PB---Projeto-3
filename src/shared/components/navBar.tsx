@@ -6,7 +6,7 @@ import NotificationIcon from './../../../public/bell-icon.svg';
 import userAvatarTest from './../../../public/userAvatar.png';
 
 
-export default function Header() {
+export default function NavBar() {
   
   const pages = ['Home', 'Getting a Taxi', 'Mobile App', 'Contact Us'];
 
