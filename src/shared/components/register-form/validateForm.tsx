@@ -1,11 +1,11 @@
 export interface Errors {
-    name?: String;
-    email?: String;
-    referalCode?: String;
-    country?: String;
-    city?: String;
-    switch?: boolean | String;
-    carType?: String;
+    name: String;
+    email: String;
+    referalCode: String;
+    country: String;
+    city: String;
+    switch: boolean | String;
+    carType: String;
 };   
 
 export default function validate (formData: any) {

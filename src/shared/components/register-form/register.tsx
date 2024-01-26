@@ -1,13 +1,17 @@
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, Typography } from '@mui/material';
 import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField } from '../customComponents';
 import { useState, useRef } from 'react';
+import { Errors } from './validateForm';
 
+import FormErrorAlert from '../formErrorAlert';
 import FormattedSelect  from '../FormattedSelect';
 import validate from './validateForm';
 import isValid from './isValid';
 import FormImage from './../../../../public/Popup image.svg';
-import { Errors } from './validateForm';
+
     
+
+
 export const RegisterForm = () => {
 
     const radioData = [
@@ -33,7 +37,7 @@ export const RegisterForm = () => {
         },
     ]
 
-    let formValidationErrors: Errors ={}
+    const [validationErrors, setValidationErrors] = useState<Errors>({} as Errors);
 
     const formData = {
         name: useRef<HTMLElement>(),
@@ -58,9 +62,9 @@ export const RegisterForm = () => {
     }
     
     function handleSubmit () {
-        formValidationErrors = {...validate(formData)};
-        console.log(formValidationErrors);
-        setIsValidated((isValid(formValidationErrors)));
+        setValidationErrors({... validate(formData)});
+        console.log(validationErrors);
+        setIsValidated((isValid(validationErrors)));
         console.log('Is validated: ' + isValidated);
     }
     return (
@@ -88,17 +92,16 @@ export const RegisterForm = () => {
             <CustomTextField name='name'
                 inputRef={formData.name}
                 label='Full Name'
-                error={formValidationErrors.name != ''}
-                aria-errormessage={formValidationErrors.name as string}
+                error={validationErrors.name != ''}
+                helperText={validationErrors.name}
             />
-                
 
             <CustomTextField 
                 name='email'
                 inputRef={formData.email}
                 label='Email Address'
-                error={formValidationErrors.email != ''}
-                helperText={formValidationErrors.email}
+                error={validationErrors.email != ''}
+                helperText={<FormErrorAlert content={validationErrors.email} />}
             />
 
             <FormattedSelect countryRef={formData.country} cityRef={formData.city}/>
@@ -107,6 +110,7 @@ export const RegisterForm = () => {
                 name='referal code'
                 inputRef={formData.referalCode}
                 label='Referal code'
+                error={validationErrors.referalCode != ''}
             />
 
             <InlineContainer alignItems= 'center' justifyContent ='space-between'>
@@ -131,7 +135,7 @@ export const RegisterForm = () => {
                     <RadioGroup ref={formData.carType} row name='Car type'>
                         {radioData.map((category) => {
                             return (
-                                <FormControlLabel  key={category.radioValue} value={category.radioValue} label=''
+                                <FormControlLabel key={category.radioValue} value={category.radioValue} label=''
                                     control={
                                         <Radio
                                             onChange={handleCarSelect}

@@ -1,11 +1,14 @@
-export default function FormErrorAlert ({style, content}) {
+import { InlineContainer, Span } from "./customComponents";
+
+export default function FormErrorAlert ({content}) {
+
     const addAlertIcon = (
         <svg className="alertIcon"
             viewBox="0 0 48 48" 
             fill="none" 
             width="13px" 
             height="13px" 
-            color="var(--Alert)">
+            color="#d32f2f">
                 <path 
                     fill-rule="evenodd" 
                     clip-rule="evenodd" 
@@ -16,9 +19,9 @@ export default function FormErrorAlert ({style, content}) {
     );
 
     return (
-        <div className={style}>
+        <InlineContainer mb="10px">
             {addAlertIcon}
-            <span>{content}</span>
-        </div>
+            <Span>{content}</Span>
+        </InlineContainer>
     );
 }
