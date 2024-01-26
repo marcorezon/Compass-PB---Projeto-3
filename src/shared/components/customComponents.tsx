@@ -38,15 +38,14 @@ export const CustomButton = styled(Button)({
 export const CustomTextField = styled(TextField) ({
     border: '1px',
 
-    // (Note: space or no space after `&` matters. See SASS "parent selector".)
-    '& .MuiOutlinedInput-root': {  // - The Input-root, inside the TextField-root
-        '& fieldset': {            // - The <fieldset> inside the Input-root
-            borderColor: 'rgba(228, 219, 233, 0.7)',   // - Set the Input border
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: 'rgba(228, 219, 233, 0.7)',
         },
         '&:hover fieldset': {
             borderColor: '#FBA403',
         },
-        '&.Mui-focused fieldset': { // - Set the Input border when parent is focused 
+        '&.Mui-focused fieldset': { 
             borderColor: 'rgba(228, 219, 233, 1)',
         },
     },

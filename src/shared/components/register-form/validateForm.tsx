@@ -12,7 +12,10 @@ export default function validate (formData: any) {
 
     const errors: Errors = {} as Errors;   
     
-    const noun_pattern =  /^[a-zA-z\s]+$/;
+    const name_pattern =  /^[a-zA-z\s]+$/;
+    const email_pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const referal_pattern = /^[A-Z]{3}-[0-9]{3}$/;
+
 
     //Name validation
         if (formData.name.current.value === '') {
@@ -20,7 +23,7 @@ export default function validate (formData: any) {
         }
         else {
             //Pasting constraint
-            if (!noun_pattern.test(formData.name.current.value)) {
+            if (!name_pattern.test(formData.name.current.value)) {
                 errors.name = 'Invalid name';
             }
             else if(formData.name.current.value.length <= 3) {
@@ -36,11 +39,8 @@ export default function validate (formData: any) {
             errors.email = 'Invalid email';
         }
         else {
-            if (!noun_pattern.test(formData.email.current.value.value)) {
+            if (!email_pattern.test(formData.email.current.value)) {
                 errors.email = 'Invalid email';
-            }
-            else if(formData.email.current.value.length <= 3) {
-                errors.email = 'Minimum number of characters: 4';
             }
             else {
                 errors.email = undefined;
@@ -52,11 +52,8 @@ export default function validate (formData: any) {
             errors.referralCode = 'Invalid code';
         }
         else {
-            if (!noun_pattern.test(formData.referralCode.current.value)) {
+            if (!referal_pattern.test(formData.referralCode.current.value)) {
                 errors.referralCode = 'Invalid code';
-            }
-            else if(formData.referralCode.current.value.length <= 3) {
-                errors.referralCode = 'Minimum number of characters: 4';
             }
             else {
                 errors.referralCode = undefined;
@@ -80,7 +77,7 @@ export default function validate (formData: any) {
             errors.country = undefined;
         }
         
-     //Switch and input validation   
+     //Switch and car type validation   
         if (formData.switch.current.checked) {
             if (formData.carType === undefined) {
                 errors.carType = 'Select a vehicle type';

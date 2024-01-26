@@ -8,25 +8,25 @@ export const ClassRideCards = () => {
             label: 'Basic',
             content: 'The best balance of price and comfort. You will not go wrong with our basic rides.',
             image: './../../public/card images/card image.png',
-            alt: 'Basic class car'
+            alt: 'Basic car'
         },
         {
             label: 'Comfort',
             content: 'If comfort is your priority, this is the ride for you. It’s spacious and packed with features.',
             image: './../../public/card images/card image-1.png',
-            alt: 'Comfort class car'
+            alt: 'Comfort car'
         },
         {
             label: 'Business',
             content: 'Do you want to travel around the city in style? Make sure to select or business class rides.',
             image: './../../public/card images/card image-2.png',
-            alt: 'Business class car'
+            alt: 'Business car'
         },
         {
             label: 'Deluxe',
             content: 'The best ride for luxury and comfort. No compromises here. You’ll surely get what you pay for.',
             image: './../../public/card images/card image-3.png',
-            alt: 'Deluxe class car'
+            alt: 'Deluxe car'
         },
     ];
 
@@ -57,7 +57,7 @@ export const ClassRideCards = () => {
 
                     <Container sx={{ display: 'flex', justifyContent: 'flex-end', pb: '14px', py:'14px' }}>
                         <CardActions sx={{p: '0'}}>
-                            <Link href='#' underline='none' marginBottom='18px' color='primary.contrastText'>LEARN MORE</Link>
+                            <Link href={'https://www.google.com/search?q=' + object.label + '+car'} underline='none' marginBottom='18px' color='primary.contrastText'>LEARN MORE</Link>
                         </CardActions>
                     </Container>
                 </Card>

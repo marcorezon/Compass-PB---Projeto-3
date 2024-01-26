@@ -20,10 +20,6 @@ const footerData = [
         links: ['Become a partner', 'Partner Support', 'Mobile app links'],
     }
 ]
-
-const footerLinkTheme = { p: '0', color: 'primary.main', textTransform: 'none', fontSize: '16px' };
-const sectionLink = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '12px' }
-
 export const Footer = () => {
     return (
         <InlineContainer  py='40px' mx='80px' gap='80px'>
@@ -44,14 +40,19 @@ export const Footer = () => {
 
             </ColumnContainer>
 
-            <InlineContainer gap='20px'>
+            <InlineContainer>
                 {footerData.map((linkSection) => {
                     return (
-                        <ColumnContainer key={linkSection.identifier} sx={{ ...sectionLink }}>
+                        <ColumnContainer key={linkSection.identifier} alignItems='flex-start' gap='12px'>
                             <Typography sx={{ mb: '8px', color: 'primary.main', fontSize: '20px' }}>
                                 {linkSection.identifier}
                             </Typography>
-                            { linkSection.links.map((link) => {return (<Link key={link} href='#' underline='none' sx={{ ...footerLinkTheme }}>{link}</Link>);} ) }
+                            { linkSection.links.map((link) => {
+                                return (
+                                    <Link key={link} href='#' underline='none' sx={{p: '0', color: 'primary.main', textTransform: 'none', fontSize: '16px'}}>
+                                        {link}
+                                    </Link>);}) 
+                            }
                         </ColumnContainer>
                     );})
                 }

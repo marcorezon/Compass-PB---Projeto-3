@@ -2,12 +2,14 @@ import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, Ty
 import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField } from '../customComponents';
 import { useState, useRef } from 'react';
 import { Errors } from './validateForm';
+
+import FormImage from './../../../../public/Popup image.svg';
 import FormErrorAlert from '../formErrorAlert';
 import SelectLocation from '../selectLocation';
+
 import validate from './validateForm';
 import isValid from './isValid';
 import postUserRegister from './postUserRegister';
-import FormImage from './../../../../public/Popup image.svg';
 
 export const FormRegister = () => {
 
@@ -35,6 +37,7 @@ export const FormRegister = () => {
     ]
 
     const [validationErrors, setValidationErrors] = useState<Errors>({} as Errors);
+
 
     const formRefs = {
         name: useRef<HTMLElement>(),

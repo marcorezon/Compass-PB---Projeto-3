@@ -12,7 +12,7 @@ export default function postUserRegister (formRefs) {
 
     console.log(valuesObject)
 
-    fetch('http://localhost:3000/plants', {
+    fetch('http://localhost:3000/userData', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(valuesObject)
