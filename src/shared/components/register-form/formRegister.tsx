@@ -6,6 +6,7 @@ import FormErrorAlert from '../formErrorAlert';
 import SelectLocation from '../selectLocation';
 import validate from './validateForm';
 import isValid from './isValid';
+import postUserRegister from './postUserRegister';
 import FormImage from './../../../../public/Popup image.svg';
 
 export const FormRegister = () => {
@@ -35,10 +36,10 @@ export const FormRegister = () => {
 
     const [validationErrors, setValidationErrors] = useState<Errors>({} as Errors);
 
-    const formData = {
+    const formRefs = {
         name: useRef<HTMLElement>(),
         email: useRef<HTMLElement>(),
-        referalCode: useRef<HTMLElement>(),
+        referralCode: useRef<HTMLElement>(),
         country: useRef<HTMLElement>(),
         city: useRef<HTMLElement>(),
         switch: useRef<HTMLElement>(),
@@ -54,15 +55,19 @@ export const FormRegister = () => {
     }
 
     function handleCarSelect(event: any) {
-        formData.carType = event.target.value;
+        formRefs.carType = event.target.value;
     }
 
     function handleSubmit() {
         console.log(validationErrors);
-        setValidationErrors({ ...validate(formData) });
-        console.log(formData);
+        setValidationErrors({ ...validate(formRefs) });
+        console.log(validationErrors);
+        console.log(formRefs);
         setIsValidated((isValid(validationErrors)));
         console.log('Is validated: ' + isValidated);
+        if(isValidated) {
+            postUserRegister({... formRefs});
+        }
     }
     return (
         <ColumnContainer
@@ -88,7 +93,7 @@ export const FormRegister = () => {
 
             <FormControl>
                 <CustomTextField name='name'
-                    inputRef={formData.name}
+                    inputRef={formRefs.name}
                     label='Full Name'
                     error={validationErrors.name != undefined}
                 />
@@ -98,7 +103,7 @@ export const FormRegister = () => {
             <FormControl>
                 <CustomTextField
                     name='email'
-                    inputRef={formData.email}
+                    inputRef={formRefs.email}
                     label='Email Address'
                     error={validationErrors.email != undefined}
                 />
@@ -106,19 +111,19 @@ export const FormRegister = () => {
             </FormControl>
 
             <SelectLocation
-                countryRef={formData.country}
-                cityRef={formData.city}
+                countryRef={formRefs.country}
+                cityRef={formRefs.city}
                 formErrors={validationErrors}
             />
 
             <FormControl>
                 <CustomTextField
-                    name='referal code'
-                    inputRef={formData.referalCode}
+                    name='referral code'
+                    inputRef={formRefs.referralCode}
                     label='Referal code'
-                    error={validationErrors.referalCode && true}
+                    error={validationErrors.referralCode && true}
                 />
-                <FormErrorAlert content={validationErrors.referalCode} />
+                <FormErrorAlert content={validationErrors.referralCode} />
             </FormControl>
 
             <InlineContainer alignItems='center' justifyContent='space-between'>
@@ -128,7 +133,7 @@ export const FormRegister = () => {
                 <Switch
                     name='switch'
                     color="secondary"
-                    inputRef={formData.switch}
+                    inputRef={formRefs.switch}
                     inputProps={{ 'aria-label': 'controlled' }}
                     onChange={toggleShowForm}
                 />
@@ -141,7 +146,7 @@ export const FormRegister = () => {
                         Select your car type
                     </FormLabel>
 
-                    <RadioGroup ref={formData.carType} row name='Car type'>
+                    <RadioGroup ref={formRefs.carType} row name='Car type'>
                         {radioData.map((category) => {
                             return (
                                 <FormControlLabel key={category.radioValue} value={category.radioValue} label=''

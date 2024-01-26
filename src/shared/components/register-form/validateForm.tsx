@@ -1,10 +1,10 @@
 export interface Errors {
     name: String | undefined;
     email: String | undefined;
-    referalCode: String | undefined;
+    referralCode: String | undefined;
     country: String | undefined;
     city: String | undefined;
-    switch: boolean | String;
+    switch: boolean | undefined;
     carType: String | undefined;
 };   
 
@@ -48,18 +48,18 @@ export default function validate (formData: any) {
         }
 
     //Referal code validation
-        if (formData.referalCode.current.value === '') {
-            errors.referalCode = 'Invalid code';
+        if (formData.referralCode.current.value === '') {
+            errors.referralCode = 'Invalid code';
         }
         else {
-            if (!noun_pattern.test(formData.referalCode.current.value)) {
-                errors.referalCode = 'Invalid code';
+            if (!noun_pattern.test(formData.referralCode.current.value)) {
+                errors.referralCode = 'Invalid code';
             }
-            else if(formData.referalCode.current.value.length <= 3) {
-                errors.referalCode = 'Minimum number of characters: 4';
+            else if(formData.referralCode.current.value.length <= 3) {
+                errors.referralCode = 'Minimum number of characters: 4';
             }
             else {
-                errors.referalCode = undefined;
+                errors.referralCode = undefined;
             }
         }
 
