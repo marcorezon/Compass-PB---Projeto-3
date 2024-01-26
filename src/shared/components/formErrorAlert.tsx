@@ -6,8 +6,8 @@ export default function FormErrorAlert ({content}) {
         <svg className="alertIcon"
             viewBox="0 0 48 48" 
             fill="none" 
-            width="13px" 
-            height="13px" 
+            width="16px" 
+            height="16px" 
             color="#d32f2f">
                 <path 
                     fill-rule="evenodd" 
@@ -18,10 +18,14 @@ export default function FormErrorAlert ({content}) {
         </svg>
     );
 
+    if(content === undefined) {
+        return;
+    }
+
     return (
-        <InlineContainer mb="10px">
+        <InlineContainer alignItems='center' gap='6px' mt='7px'>
             {addAlertIcon}
-            <Span>{content}</Span>
+            <Span sx={{fontSize: '16px', color: '#d32f2f'}}>{content}</Span>
         </InlineContainer>
     );
 }

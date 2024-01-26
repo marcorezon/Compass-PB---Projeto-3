@@ -44,7 +44,7 @@ export const CustomTextField = styled(TextField) ({
             borderColor: 'rgba(228, 219, 233, 0.7)',   // - Set the Input border
         },
         '&:hover fieldset': {
-            borderColor: 'rgba(228, 219, 233, 1)', // - Set the Input border when parent has :hover
+            borderColor: '#FBA403',
         },
         '&.Mui-focused fieldset': { // - Set the Input border when parent is focused 
             borderColor: 'rgba(228, 219, 233, 1)',
@@ -64,7 +64,7 @@ export const CustomSelect = styled(Select) ({
           borderColor: 'rgba(228, 219, 233, 1)',
         },
         '&:hover .MuiOutlinedInput-notchedOutline': {
-          borderColor: 'rgba(228, 219, 233, 1)',
+          borderColor: '#FBA403',
         },
         '.MuiSvgIcon-root ': {
           fill: 'white',

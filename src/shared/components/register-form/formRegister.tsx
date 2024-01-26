@@ -2,17 +2,13 @@ import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Switch, Ty
 import { InlineContainer, ColumnContainer, Img, CustomButton, CustomTextField } from '../customComponents';
 import { useState, useRef } from 'react';
 import { Errors } from './validateForm';
-
 import FormErrorAlert from '../formErrorAlert';
-import FormattedSelect  from '../FormattedSelect';
+import SelectLocation from '../selectLocation';
 import validate from './validateForm';
 import isValid from './isValid';
 import FormImage from './../../../../public/Popup image.svg';
 
-    
-
-
-export const RegisterForm = () => {
+export const FormRegister = () => {
 
     const radioData = [
         {
@@ -53,34 +49,35 @@ export const RegisterForm = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
 
 
-    function toggleShowForm () {
+    function toggleShowForm() {
         showForm ? setShowForm(false) : setShowForm(true);
     }
-    
-    function handleCarSelect (event:any) {
+
+    function handleCarSelect(event: any) {
         formData.carType = event.target.value;
     }
-    
-    function handleSubmit () {
-        setValidationErrors({... validate(formData)});
+
+    function handleSubmit() {
         console.log(validationErrors);
+        setValidationErrors({ ...validate(formData) });
+        console.log(formData);
         setIsValidated((isValid(validationErrors)));
         console.log('Is validated: ' + isValidated);
     }
     return (
         <ColumnContainer
             alignSelf='center'
-            maxWidth = '1252px'
-            p = '25px'
-            gap = '24px'
-            borderRadius = '4px'
-            bgcolor = 'background.paper'
-            >
+            maxWidth='1252px'
+            p='25px'
+            gap='24px'
+            borderRadius='4px'
+            bgcolor='background.paper'
+        >
 
             <InlineContainer textAlign='start' alignItems='center' gap='10px'>
-                <Img src={FormImage} alt='car icon' sx={{maxWidth: '193px', maxHeight: '132px'}}/>
-                <ColumnContainer justifyContent = 'center'>
-                    <Typography variant = 'h5' component='h5'>
+                <Img src={FormImage} alt='car icon' sx={{ maxWidth: '193px', maxHeight: '132px' }} />
+                <ColumnContainer justifyContent='center'>
+                    <Typography variant='h5' component='h5'>
                         Drive with MyRide
                     </Typography>
                     <Typography component='p' sx={{ color: 'primary.main' }}>
@@ -89,45 +86,57 @@ export const RegisterForm = () => {
                 </ColumnContainer>
             </InlineContainer>
 
-            <CustomTextField name='name'
-                inputRef={formData.name}
-                label='Full Name'
-                error={validationErrors.name != ''}
-                helperText={validationErrors.name}
+            <FormControl>
+                <CustomTextField name='name'
+                    inputRef={formData.name}
+                    label='Full Name'
+                    error={validationErrors.name != undefined}
+                />
+                <FormErrorAlert content={validationErrors.name} />
+            </FormControl>
+
+            <FormControl>
+                <CustomTextField
+                    name='email'
+                    inputRef={formData.email}
+                    label='Email Address'
+                    error={validationErrors.email != undefined}
+                />
+                <FormErrorAlert content={validationErrors.email} />
+            </FormControl>
+
+            <SelectLocation
+                countryRef={formData.country}
+                cityRef={formData.city}
+                formErrors={validationErrors}
             />
 
-            <CustomTextField 
-                name='email'
-                inputRef={formData.email}
-                label='Email Address'
-                error={validationErrors.email != ''}
-                helperText={<FormErrorAlert content={validationErrors.email} />}
-            />
+            <FormControl>
+                <CustomTextField
+                    name='referal code'
+                    inputRef={formData.referalCode}
+                    label='Referal code'
+                    error={validationErrors.referalCode && true}
+                />
+                <FormErrorAlert content={validationErrors.referalCode} />
+            </FormControl>
 
-            <FormattedSelect countryRef={formData.country} cityRef={formData.city}/>
-
-            <CustomTextField 
-                name='referal code'
-                inputRef={formData.referalCode}
-                label='Referal code'
-                error={validationErrors.referalCode != ''}
-            />
-
-            <InlineContainer alignItems= 'center' justifyContent ='space-between'>
-                <Typography component='p' sx={{color: '#fff', textAlign: 'start'}}>
+            <InlineContainer alignItems='center' justifyContent='space-between'>
+                <Typography component='p' sx={{ color: '#fff', textAlign: 'start' }}>
                     I drive my own car
                 </Typography>
-                <Switch 
+                <Switch
                     name='switch'
-                    inputRef={formData.switch} 
-                    inputProps={{ 'aria-label': 'controlled' }} 
+                    color="secondary"
+                    inputRef={formData.switch}
+                    inputProps={{ 'aria-label': 'controlled' }}
                     onChange={toggleShowForm}
                 />
             </InlineContainer>
 
 
             {showForm && (
-                <FormControl sx={{ display: 'flex', alignItems: 'flex-start', gap: '16px'}}>
+                <FormControl sx={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
                     <FormLabel id='car-type' sx={{ color: 'primary.contrastText' }}>
                         Select your car type
                     </FormLabel>
@@ -153,12 +162,14 @@ export const RegisterForm = () => {
                                         />
                                     }
                                 />
-                            );})
+                            );
+                        })
                         }
                     </RadioGroup>
+                    <FormErrorAlert content={validationErrors.carType} />
                 </FormControl>)
             }
-            <CustomButton onClick={handleSubmit} sx={{maxWidth: '200px', bgcolor: 'secondary.main'}}>Submit</CustomButton>
+            <CustomButton onClick={handleSubmit} sx={{ maxWidth: '200px', bgcolor: 'secondary.main' }}>Submit</CustomButton>
         </ColumnContainer>
     );
 }

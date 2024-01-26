@@ -1,16 +1,16 @@
 export interface Errors {
-    name: String;
-    email: String;
-    referalCode: String;
-    country: String;
-    city: String;
+    name: String | undefined;
+    email: String | undefined;
+    referalCode: String | undefined;
+    country: String | undefined;
+    city: String | undefined;
     switch: boolean | String;
-    carType: String;
+    carType: String | undefined;
 };   
 
 export default function validate (formData: any) {
 
-    const errors: Errors= {};   
+    const errors: Errors = {} as Errors;   
     
     const noun_pattern =  /^[a-zA-z\s]+$/;
 
@@ -27,7 +27,7 @@ export default function validate (formData: any) {
                 errors.name = 'Minimum number of characters: 4';
             }
             else {
-                errors.name = '';
+                errors.name = undefined;
             }
         }
 
@@ -43,7 +43,7 @@ export default function validate (formData: any) {
                 errors.email = 'Minimum number of characters: 4';
             }
             else {
-                errors.email = '';
+                errors.email = undefined;
             }
         }
 
@@ -59,7 +59,7 @@ export default function validate (formData: any) {
                 errors.referalCode = 'Minimum number of characters: 4';
             }
             else {
-                errors.referalCode = '';
+                errors.referalCode = undefined;
             }
         }
 
@@ -68,7 +68,7 @@ export default function validate (formData: any) {
             errors.country = 'Invalid country';
         }
         else {
-            errors.country = '';
+            errors.country = undefined;
         }
 
 
@@ -77,7 +77,7 @@ export default function validate (formData: any) {
             errors.city = 'Invalid city';
         }
         else {
-            errors.country = '';
+            errors.country = undefined;
         }
         
      //Switch and input validation   
@@ -85,12 +85,12 @@ export default function validate (formData: any) {
             if (formData.carType === undefined) {
                 errors.carType = 'Select a vehicle type';
             } else {
-                errors.switch = '';
-                errors.carType = '';
+                errors.switch = undefined;
+                errors.carType = undefined;
             }
         } else {
-            errors.switch = '';
-            errors.carType = '';
+            errors.switch = undefined;
+            errors.carType = undefined;
         }
 
     return errors;

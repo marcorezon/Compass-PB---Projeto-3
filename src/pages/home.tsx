@@ -2,7 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { Footer } from  '../shared/components/footer';
 import { ClassRideCards } from '../shared/components/classRideCard';
 import { GetARide } from '../shared/components/getARide';
-import { RegisterForm } from '../shared/components/register-form/register';
+import { FormRegister } from '../shared/components/register-form/formRegister';
 import { ColumnContainer } from '../shared/components/customComponents';
 
 import Header from '../shared/components/header';
@@ -37,7 +37,7 @@ export const Home = () => {
             
             <ClassRideCards />
 
-            <RegisterForm />
+            <FormRegister />
         </Container>
         <Footer />
     </ColumnContainer>
