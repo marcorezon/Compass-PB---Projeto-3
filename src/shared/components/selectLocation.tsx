@@ -33,6 +33,7 @@ export default function SelectLocation({ countryRef, cityRef, formErrors }: Loca
                 <InputLabel id='contry-select-label'>Country</InputLabel>
 
                 <CustomSelect
+                    aria-label='country'
                     name='country'
                     inputRef={countryRef as any}
                     labelId='Country'
@@ -57,6 +58,8 @@ export default function SelectLocation({ countryRef, cityRef, formErrors }: Loca
                 <InputLabel id='city-select-label'>City</InputLabel>
 
                 <CustomSelect
+                   aria-label='city'
+
                     name='city'
                     inputRef={cityRef as any}
                     labelId='City'

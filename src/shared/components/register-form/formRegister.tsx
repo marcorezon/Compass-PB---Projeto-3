@@ -17,22 +17,22 @@ export default function FormRegister ({ toggleSucceed }) {
         {
             radioValue: 'sedan',
             imageLink: './../../../public/car types cards/Option Card.svg',
-            altContent: 'sedan car icon'
+            altContent: 'sedan car'
         },
         {
             radioValue: 'suv/van',
             imageLink: './../../../public/car types cards/Option Card-1.svg',
-            altContent: 'sedan car icon'
+            altContent: 'sedan car'
         },
         {
             radioValue: 'semy luxury',
             imageLink: './../../../public/car types cards/Option Card-2.svg',
-            altContent: 'semy luxury car icon'
+            altContent: 'semy luxury car'
         },
         {
             radioValue: 'luxury',
             imageLink: './../../../public/car types cards/Option Card-3.svg',
-            altContent: 'luxury car icon'
+            altContent: 'luxury car'
         },
     ]
 

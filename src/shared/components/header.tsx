@@ -28,7 +28,8 @@ export default function Header() {
         }
       </InlineContainer>
 
-        <InlineContainer gap='40px' maxWidth='100px' alignItems='center'>
+        <InlineContainer gap='40px' maxWidth='120px' alignItems='center'>
+
           <Box>
             <IconButton>
                   <Img src={NotificationIcon} alt='notification bell' sx={{width: '24px', height: '27px'}} />
@@ -40,6 +41,7 @@ export default function Header() {
               <Img src={userAvatarTest} alt='user avatar' sx={{ height: '36px', width: '36px', borderRadius: '36px' }}/>
             </IconButton>
           </Box>
+
         </InlineContainer>
       </Toolbar>
     </AppBar>

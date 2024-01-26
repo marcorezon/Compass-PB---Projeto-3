@@ -21,7 +21,14 @@ export default function RegisterSuccess ({ toggleSucceed }) {
     }, []);
 
     return (
-        <ColumnContainer alignItems='center' bgcolor='background.paper' borderRadius='10px' p='20px' gap='30px'>
+        <ColumnContainer 
+            width='70%'
+            alignItems='center' 
+            bgcolor='background.paper' 
+            borderRadius='10px' 
+            p='20px' 
+            gap='30px'
+        >
             <InlineContainer  alignItems='center' justifyContent='center' gap='15px'>
                 <Img src={checkedIcon} alt='success icon' sx={{maxWidth:'45px', maxHeight:'45px'}} />
                 <Typography variant='h2' component='h5' fontSize='45px'>
@@ -29,7 +36,7 @@ export default function RegisterSuccess ({ toggleSucceed }) {
                 </Typography>
             </InlineContainer>
 
-            <ColumnContainer alignItems='start' alignContent='center' sx={{color: 'primary.main'}}>
+            <ColumnContainer width='70%' alignItems='start' alignContent='center' sx={{color: 'primary.main'}}>
                     <Typography>Name: {userData.name}</Typography>
                     <Typography>Email: {userData.email}</Typography>
                     <Typography>Country: {userData.country}</Typography>
