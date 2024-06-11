@@ -1,11 +1,10 @@
 import {Home} from "../pages/home";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 export const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="*" element={<Navigate to="/pagina-inicial" />} />
+            <Route path="/*" element={<Home />} />
         </Routes>       
     );
 }
